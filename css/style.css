@@ -1434,15 +1434,17 @@ textarea {
   font-family: 'Trevor Sans', 'DM Sans', sans-serif;
   background: var(--white);
   padding: 3rem 1.5rem 4rem;
+  text-align: center;
 }
 
 .members-heading {
   font-family: 'Trevor Sans', 'DM Sans', sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--green-dark);
-  margin: 0 0 2rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0 0 2.5rem;
+  text-transform: none;
 }
 
 .members-logos {
@@ -1450,21 +1452,28 @@ textarea {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 3rem 4rem;
+  gap: 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .members-logo {
   flex: 0 0 auto;
+  width: 160px;
+  height: 90px;
+  background: #f5f5f5;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
+  padding: 1.25rem;
 }
 
 .members-logo img {
-  max-height: 56px;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
-  max-width: 160px;
+  height: auto;
   object-fit: contain;
 }
 
