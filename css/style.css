@@ -1,22 +1,23 @@
 /* ============================================================
    Club 32 — Corporate Golf Membership
-   Clean, professional, green aesthetic
+   Clean, professional, black + modern type pairing
+   (Playfair Display + Outfit — display / UI)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --green:       #1a4d38;
-  --green-light: #2d6b4a;
-  --green-dark:  #0f3325;
-  --green-muted: #3d5c4d;
-  --accent:      #1a2e1f;
+  --green:       #000000;
+  --green-light: #333333;
+  --green-dark:  #000000;
+  --green-muted: #4a4a4a;
+  --accent:      #000000;
   --white:       #ffffff;
-  --off-white:   #f8f9f7;
+  --off-white:   #f8f8f8;
   --text-dark:   #1a1a1a;
-  --text-body:   #3d4a42;
-  --text-muted:  #5c6b62;
-  --border:      rgba(26,77,56,0.12);
+  --text-body:   #3d3d3d;
+  --text-muted:  #666666;
+  --border:      rgba(0,0,0,0.12);
   --shadow:      0 2px 16px rgba(0,0,0,0.06);
   --shadow-lg:   0 8px 32px rgba(0,0,0,0.1);
   --radius:      6px;
@@ -30,7 +31,7 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 400;
   color: var(--text-body);
   background: var(--white);
@@ -44,22 +45,23 @@ ul { list-style: none; }
 
 /* ── Typography ── */
 h1, h2, h3, h4, h5 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   line-height: 1.25;
   color: var(--green-dark);
+  letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 700; }
-h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; }
-h3 { font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight: 600; }
-h4 { font-size: 1.05rem; font-weight: 600; }
+h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 400; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 400; }
+h3 { font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight: 500; }
+h4 { font-size: 1.05rem; font-weight: 500; }
 
 p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 .section-label {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
@@ -115,10 +117,10 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 }
 
 .header-logo .club-name {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .header-logo .club-name span {
@@ -142,7 +144,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 .header-nav a:hover {
   color: var(--green);
-  background: rgba(26,77,56,0.06);
+  background: rgba(0,0,0,0.06);
 }
 
 .header-nav a.active {
@@ -236,10 +238,10 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(15,51,37,0.94) 0%,
-    rgba(15,51,37,0.82) 28%,
-    rgba(15,51,37,0.45) 52%,
-    rgba(15,51,37,0.15) 72%,
+    rgba(0,0,0,0.94) 0%,
+    rgba(0,0,0,0.82) 28%,
+    rgba(0,0,0,0.45) 52%,
+    rgba(0,0,0,0.15) 72%,
     transparent 88%
   );
   pointer-events: none;
@@ -316,7 +318,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15,51,37,0.72) 0%, rgba(15,51,37,0.88) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.88) 100%);
 }
 
 .hero-small { min-height: 320px; }
@@ -338,7 +340,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   display: inline-block;
   padding: 0.75rem 1.75rem;
   border-radius: var(--radius);
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -353,13 +355,13 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 .btn-gold {
   background: var(--green);
   color: var(--white);
-  box-shadow: 0 2px 12px rgba(26,77,56,0.25);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 
 .btn-primary:hover,
 .btn-gold:hover {
   background: var(--green-light);
-  box-shadow: 0 4px 20px rgba(26,77,56,0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   transform: translateY(-1px);
 }
 
@@ -434,7 +436,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 .card:hover {
   box-shadow: var(--shadow);
-  border-color: rgba(26,77,56,0.2);
+  border-color: rgba(0,0,0,0.2);
   transform: translateY(-2px);
 }
 
@@ -512,7 +514,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 .value-item h4 {
   color: var(--white);
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
   margin-bottom: 0.35rem;
 }
@@ -562,7 +564,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 }
 
 .principle-card .principle-num {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2rem;
   color: rgba(255,255,255,0.25);
   font-weight: 700;
@@ -593,7 +595,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 .committee-card:hover {
   box-shadow: var(--shadow);
-  border-color: rgba(26,77,56,0.2);
+  border-color: rgba(0,0,0,0.2);
   transform: translateY(-2px);
 }
 
@@ -608,7 +610,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   margin: 0 auto 0.75rem;
   font-size: 1.25rem;
   color: var(--white);
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   border: 2px solid rgba(255,255,255,0.2);
 }
@@ -656,17 +658,20 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 .membership-card:hover {
   box-shadow: var(--shadow);
-  border-color: rgba(26,77,56,0.2);
+  border-color: rgba(0,0,0,0.2);
   transform: translateY(-2px);
 }
 
 .membership-card.featured {
-  border-color: var(--green);
+  border-color: rgba(255,255,255,0.22);
   background: var(--green-dark);
   color: var(--white);
 }
 
-.membership-card.featured::before { transform: scaleX(1); }
+.membership-card.featured::before {
+  transform: scaleX(1);
+  background: rgba(255,255,255,0.9);
+}
 
 .membership-card.featured h3 { color: var(--white); }
 
@@ -674,7 +679,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 .membership-card.featured li { color: rgba(255,255,255,0.88); }
 
 .membership-card .price {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--green);
@@ -745,7 +750,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.2rem;
   font-weight: 700;
   margin: 0 auto 1rem;
@@ -819,7 +824,7 @@ textarea {
   padding: 0.75rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.9375rem;
   color: var(--text-dark);
   background: var(--white);
@@ -830,7 +835,7 @@ textarea {
 
 input:focus, select:focus, textarea:focus {
   border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(26,77,56,0.1);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
 }
 
 textarea {
@@ -895,7 +900,7 @@ textarea {
 }
 
 .vision-item blockquote {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   font-style: italic;
   color: var(--white);
@@ -929,7 +934,7 @@ textarea {
 
 /* ── Note box ── */
 .note-box {
-  background: rgba(26,77,56,0.06);
+  background: rgba(0,0,0,0.06);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem 1.5rem;
@@ -944,86 +949,381 @@ textarea {
 
 .note-box p { font-size: 0.9rem; color: var(--text-body); margin: 0; }
 
-/* ── Footer ── */
+/* ── Footer (tagline band + 4-col + logo row + legal — Club 32) ── */
 .footer {
+  margin-top: 0;
+}
+
+.footer-tagline {
+  background: var(--off-white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.footer-tagline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.25rem, 2.8vw, 1.85rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--text-dark);
+  margin: 0 auto;
+  max-width: 36rem;
+}
+
+.footer-body {
   background: var(--green-dark);
-  color: rgba(255,255,255,0.75);
-  padding: 3.5rem 0 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.72);
 }
 
-.footer-grid {
+.footer-wrap {
+  padding: 0;
+}
+
+.footer-columns {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
-  gap: 2.5rem;
-  padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.5rem 2rem;
+  padding: 3rem 0 2.5rem;
+  align-items: start;
 }
 
-.footer-brand .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.footer-col-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--white);
+  margin: 0 0 1.35rem;
+}
+
+.footer-col-title-accent {
   margin-bottom: 1rem;
 }
 
-.footer-brand .footer-logo img {
-  width: 32px;
-  height: 32px;
+.footer-col-title-accent a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.footer-brand .club-name {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
+.footer-col-title-accent a:hover {
+  opacity: 0.85;
+}
+
+/* Icon list — Get in Touch */
+.footer-icon-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.footer-icon-list a,
+.footer-icon-list-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: rgba(255,255,255,0.68);
+  transition: color 0.2s ease;
+}
+
+.footer-icon-list a:hover {
   color: var(--white);
 }
 
-.footer-brand .club-name span { color: rgba(255,255,255,0.9); }
-
-.footer-brand p {
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.55);
-  max-width: 280px;
-  line-height: 1.65;
+.footer-icon-list-icon {
+  flex-shrink: 0;
+  width: 1.35rem;
+  text-align: center;
+  color: rgba(255,255,255,0.42);
+  margin-top: 0.12rem;
 }
 
-.footer-col h5 {
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: 0.7rem;
+.footer-icon-list a:hover .footer-icon-list-icon {
+  color: rgba(255,255,255,0.65);
+}
+
+.footer-icon-list-icon i {
+  font-size: 0.95rem;
+}
+
+.footer-icon-list-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.footer-icon-list-text strong {
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.92);
 }
 
-.footer-col ul li { margin-bottom: 0.5rem; }
+.footer-icon-list-sub {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.55;
+}
 
-.footer-col ul li a {
-  color: rgba(255,255,255,0.6);
+/* Explore */
+.footer-link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-link-list a {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.62);
+  text-decoration: none;
+  padding: 0.2rem 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-link-list a:hover {
+  color: var(--white);
+  transform: translateX(3px);
+}
+
+/* Snapshot card (news-style) */
+.footer-feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.85rem 0;
+  border-radius: var(--radius-lg);
+  transition: background 0.2s ease;
+  margin: -0.35rem -0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.footer-feature:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.footer-feature-media {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-feature-media img {
+  width: 56px;
+  height: 56px;
+}
+
+.footer-feature-body {
+  min-width: 0;
+}
+
+.footer-feature-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--white);
+  margin: 0 0 0.35rem;
+}
+
+.footer-feature-meta {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.45);
+  margin: 0 0 0.5rem;
+}
+
+.footer-feature-more {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.2s ease;
+}
+
+.footer-feature:hover .footer-feature-more {
+  color: rgba(255,255,255,0.9);
+}
+
+/* CTA column */
+.footer-cta-deck {
+  font-family: 'Outfit', sans-serif;
   font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.52);
+  margin: 0 0 1.25rem;
+}
+
+.footer-cta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
   transition: var(--transition);
 }
 
-.footer-col ul li a:hover { color: var(--white); }
-
-.footer-col address {
-  font-style: normal;
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.8;
+.footer-cta-pill:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.55);
 }
 
-.footer-bottom {
-  padding: 1.25rem 0;
-  text-align: center;
-  font-size: 0.8rem;
+.footer-cta-pill i {
+  font-size: 0.65rem;
+  opacity: 0.85;
+}
+
+/* Logo row + social */
+.footer-mid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-mid-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--white);
+  transition: opacity 0.2s ease;
+}
+
+.footer-mid-brand:hover {
+  opacity: 0.88;
+}
+
+.footer-mid-brand img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.footer-mid-wordmark {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.footer-mid-wordmark span {
+  font-weight: 400;
+  opacity: 0.88;
+}
+
+.footer-mid-aside {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.footer-mid-rule {
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: rgba(255,255,255,0.22);
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.footer-social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.footer-social-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
   color: var(--white);
 }
 
-.footer-bottom p,
-.footer-bottom span { color: var(--white) !important; }
+/* Legal strip */
+.footer-legal {
+  text-align: center;
+  padding: 1.35rem 1rem 2.25rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.35);
+}
+
+.footer-legal p {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.42);
+}
+
+.footer-legal-em {
+  color: rgba(255,255,255,0.78);
+  font-weight: 500;
+}
+
+.footer-legal-sep {
+  opacity: 0.45;
+}
+
+.footer-legal-rest {
+  color: rgba(255,255,255,0.5);
+}
 
 /* ── Divider ── */
 .divider-accent,
@@ -1066,7 +1366,7 @@ textarea {
 }
 
 .stat-item .stat-num {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2.25rem;
   font-weight: 700;
   color: var(--white);
@@ -1083,8 +1383,12 @@ textarea {
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .card-grid-3,
-  .community-highlights,
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .community-highlights { grid-template-columns: 1fr 1fr; }
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.25rem 1.75rem;
+    padding-top: 2.75rem;
+  }
   .values-strip { flex-wrap: wrap; }
   .value-item { flex: 1 1 50%; min-width: 140px; }
   .who-we-are { gap: 2rem; }
@@ -1099,7 +1403,44 @@ textarea {
   .who-we-are,
   .community-highlights { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-tagline {
+    padding: 2rem 1.25rem;
+  }
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 2.5rem 0 1.5rem;
+  }
+  .footer-col {
+    padding: 1.75rem 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-col:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+  .footer-mid {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.75rem 0;
+  }
+  .footer-mid-aside {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .footer-mid-rule {
+    width: 100%;
+    max-width: none;
+    flex: none;
+  }
+  .footer-social {
+    justify-content: flex-start;
+  }
+  .footer-legal {
+    padding-bottom: 2rem;
+  }
   .values-strip { flex-direction: column; border-radius: var(--radius-lg); }
   .value-item {
     flex: 1 1 100%;
@@ -1141,7 +1482,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--white);
