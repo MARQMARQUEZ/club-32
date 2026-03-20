@@ -25,6 +25,12 @@
   font-size: 1.5rem;
 }
 
+/* Black value tiles: icons must stay visible (default --green would match the background) */
+.values-strip .value-icon,
+.values-strip .value-icon i {
+  color: #ffffff;
+}
+
 .hi-icon {
   margin-bottom: 0.5rem;
 }
