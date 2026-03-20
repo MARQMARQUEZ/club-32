@@ -43,12 +43,13 @@
   font-size: 1.25rem;
 }
 
-/* Stat block: club logo image */
+/* Stat block: optional img icon in stat tiles */
 .stat-icon {
   width: 32px;
   height: 32px;
   margin: 0 auto 0.25rem;
   display: block;
+  background: none;
 }
 
 /* Dark sections: icons white */

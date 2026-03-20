@@ -1,10 +1,10 @@
 /* ============================================================
-   Club 32 — Corporate Golf Membership
+   Club32 — Corporate Golf Membership
    Clean, professional, black + modern type pairing
-   (Playfair Display + Outfit — display / UI)
+   (Tenor Sans + Outfit — display / UI)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..64,400;0,9..64,500;0,9..64,600;0,9..64,700&family=Outfit:wght@300;400;500;600;700&family=Tenor+Sans&display=swap');
 
 :root {
   --green:       #000000;
@@ -45,7 +45,7 @@ ul { list-style: none; }
 
 /* ── Typography ── */
 h1, h2, h3, h4, h5 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   line-height: 1.25;
   color: var(--green-dark);
   letter-spacing: -0.02em;
@@ -88,8 +88,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   z-index: 100;
   height: var(--header-h);
   background: var(--white);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  font-family: 'Tenor Sans', sans-serif;
 }
 
 .header-inner {
@@ -117,7 +116,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 }
 
 .header-logo .club-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -207,6 +206,39 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   .header-nav.open { display: flex; }
   .header-nav a { padding: 0.75rem 1rem; }
   .header-cta { margin-left: 0; }
+}
+
+/* ── Home hero: image block, same width as header ── */
+.hero-home {
+  padding: calc(var(--header-h) + 3rem) 0 1rem;
+  background: var(--white);
+}
+
+.hero-home-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.hero-home-media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.hero-home-media picture,
+.hero-home-media img {
+  display: block;
+}
+
+.hero-home-media img {
+  width: 100%;
+  height: auto;
+}
+
+/* Pull first content section closer under the home hero */
+.hero-home + .section-pad {
+  padding-top: 2.25rem;
 }
 
 /* ── Hero: image with text on left, no overlap on ball ── */
@@ -514,7 +546,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 .value-item h4 {
   color: var(--white);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 1rem;
   margin-bottom: 0.35rem;
 }
@@ -564,7 +596,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 }
 
 .principle-card .principle-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 2rem;
   color: rgba(255,255,255,0.25);
   font-weight: 700;
@@ -610,7 +642,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   margin: 0 auto 0.75rem;
   font-size: 1.25rem;
   color: var(--white);
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-weight: 700;
   border: 2px solid rgba(255,255,255,0.2);
 }
@@ -679,7 +711,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 .membership-card.featured li { color: rgba(255,255,255,0.88); }
 
 .membership-card .price {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--green);
@@ -750,7 +782,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   margin: 0 auto 1rem;
@@ -900,7 +932,7 @@ textarea {
 }
 
 .vision-item blockquote {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 1.1rem;
   font-style: italic;
   color: var(--white);
@@ -949,7 +981,7 @@ textarea {
 
 .note-box p { font-size: 0.9rem; color: var(--text-body); margin: 0; }
 
-/* ── Footer (tagline band + 4-col + logo row + legal — Club 32) ── */
+/* ── Footer (tagline band + 4-col + logo row + legal — Club32) ── */
 .footer {
   margin-top: 0;
 }
@@ -963,7 +995,7 @@ textarea {
 }
 
 .footer-tagline-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: clamp(1.25rem, 2.8vw, 1.85rem);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -991,7 +1023,7 @@ textarea {
 }
 
 .footer-col-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 1.125rem;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -1144,7 +1176,7 @@ textarea {
 }
 
 .footer-feature-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -1242,7 +1274,7 @@ textarea {
 }
 
 .footer-mid-wordmark {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -1335,49 +1367,105 @@ textarea {
   margin-bottom: 1.25rem;
 }
 
-/* ── Who we are ── */
-.who-we-are {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
+/* ── Who we are (home) — centered, minimal, Trevor Sans ── */
+.section-who {
+  font-family: 'Trevor Sans', 'DM Sans', sans-serif;
+  background: var(--white);
+  padding: clamp(4rem, 10vw, 7rem) 1.5rem;
+  text-align: center;
 }
 
-.who-text p { color: var(--text-body); margin-bottom: 1rem; }
+.who-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.who-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.who-heading {
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--green-dark);
+  margin: 0 0 1rem;
+}
+
+.who-body {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0 0 1.75rem;
+}
+
+.who-cta {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
 
 .who-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 1.75rem 1.25rem;
-  background: var(--green);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.stat-item .stat-num,
-.stat-item .stat-icon {
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.stat-item .stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: var(--white);
-}
-
-.stat-item .stat-label {
-  font-size: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 2.5rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.7);
+  color: var(--text-muted);
+}
+
+.who-stats__item strong {
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-right: 0.25em;
+}
+
+/* ── Members logo carousel ── */
+.section-members {
+  font-family: 'Trevor Sans', 'DM Sans', sans-serif;
+  background: var(--white);
+  padding: 3rem 1.5rem 4rem;
+}
+
+.members-heading {
+  font-family: 'Trevor Sans', 'DM Sans', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--green-dark);
+  margin: 0 0 2rem;
+}
+
+.members-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem 4rem;
+}
+
+.members-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.members-logo img {
+  max-height: 56px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
 }
 
 /* ── Responsive ── */
@@ -1391,7 +1479,6 @@ textarea {
   }
   .values-strip { flex-wrap: wrap; }
   .value-item { flex: 1 1 50%; min-width: 140px; }
-  .who-we-are { gap: 2rem; }
 }
 
 @media (max-width: 768px) {
@@ -1400,7 +1487,6 @@ textarea {
   .card-grid-3,
   .card-grid-2,
   .vision-block,
-  .who-we-are,
   .community-highlights { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-tagline {
@@ -1451,7 +1537,6 @@ textarea {
   .hero-banner { min-height: 440px; }
   .hero-small { min-height: 280px; }
   .btn-group { flex-direction: column; align-items: flex-start; }
-  .who-stats { grid-template-columns: 1fr 1fr; }
   .contact-form { padding: 1.75rem 1.25rem; }
 }
 
@@ -1482,7 +1567,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Tenor Sans', sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--white);
@@ -1531,6 +1616,5 @@ textarea {
 
 @media (max-width: 480px) {
   .committee-grid { grid-template-columns: 1fr 1fr; }
-  .who-stats { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr; }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Club 32 — Premier Golf Club</title>
+  <title>Club32 — Premier Golf Club</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/icons.css" />
@@ -15,8 +15,8 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="header-logo">
-        <img src="images/favicon.svg" alt="Club 32" width="36" height="36" />
-        <span class="club-name">Club <span>32</span></span>
+        <img src="images/favicon.svg" alt="Club32" width="36" height="36" />
+        <span class="club-name">Club<span>32</span></span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -31,58 +31,43 @@
     </div>
   </header>
 
-  <!-- Hero: text on left over dark overlay, ball visible on right -->
-  <section class="hero-banner">
-    <div class="hero-media">
-      <picture>
-        <source srcset="images/hero.webp" type="image/webp" />
-        <img src="images/hero.jpg" alt="Club 32 — Premier golf membership" width="1920" height="815" />
-      </picture>
-    </div>
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-inner">
-      <div class="hero-content">
-        <span class="section-label">Consumer Goods Industry</span>
-        <h1>Welcome to Club 32</h1>
-        <div class="hero-divider"></div>
-        <p class="hero-subtitle">A premier platform for consumer goods industry professionals to connect and drive positive change — one round at a time.</p>
-        <div class="btn-group">
-          <a href="membership.html" class="btn btn-gold">Become a Member</a>
-          <a href="about.html" class="btn btn-outline">Learn More</a>
-        </div>
+  <!-- Hero: image includes headline and CTAs -->
+  <section class="hero-home" aria-label="Welcome">
+    <div class="hero-home-inner">
+      <div class="hero-home-media">
+        <img src="images/hero.jpg" alt="Club32 — Premier golf membership" width="1920" height="815" />
       </div>
     </div>
   </section>
 
   <!-- Who We Are -->
-  <section class="section-pad">
+  <section class="section-who" aria-labelledby="who-heading">
+    <div class="who-inner">
+      <p class="who-eyebrow">Who We Are</p>
+      <h2 id="who-heading" class="who-heading">A Private Club for Industry Leaders</h2>
+      <p class="who-body">32 members. Consumer goods. One purpose.</p>
+      <a href="about.html" class="who-cta btn btn-gold">Discover Our Story</a>
+      <div class="who-stats" aria-label="At a glance">
+        <span class="who-stats__item"><strong>32</strong> Members</span>
+        <span class="who-stats__item"><strong>6</strong> Sectors</span>
+        <span class="who-stats__item"><strong>2026</strong> Committee</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Members — logo carousel -->
+  <section class="section-members" aria-labelledby="members-heading">
     <div class="container">
-      <div class="who-we-are">
-        <div class="who-text">
-          <span class="section-label">Who We Are</span>
-          <h2>A Private Club for Industry Leaders</h2>
-          <div class="divider-accent"></div>
-          <p>Club 32 is an exclusive, private golf club designed specifically for professionals within the Consumer Goods Industry — spanning Retail, Wholesale, Pharmacy, Liquor, Pet Trade, and affiliated service providers.</p>
-          <p>Our membership is intentionally limited to just 32 fully paid-up members, ensuring that every interaction is meaningful, every event is intimate, and every round of golf is an opportunity to strengthen the bonds that drive our industry forward.</p>
-          <a href="about.html" class="btn btn-gold" style="margin-top:0.5rem;">Discover Our Story</a>
+      <h2 id="members-heading" class="members-heading">Members</h2>
+      <div class="members-logos" role="list">
+        <div class="members-logo" role="listitem">
+          <img src="images/20.png" alt="" width="160" height="80" />
         </div>
-        <div class="who-stats">
-          <div class="stat-item">
-            <span class="stat-num">32</span>
-            <span class="stat-label">Exclusive Members</span>
-          </div>
-          <div class="stat-item">
-            <img src="images/favicon.svg" alt="" class="stat-icon" width="32" height="32" />
-            <span class="stat-label">Private Club</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">6</span>
-            <span class="stat-label">Industry Sectors</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">2026</span>
-            <span class="stat-label">Committee Year</span>
-          </div>
+        <div class="members-logo" role="listitem">
+          <img src="images/21.png" alt="" width="160" height="80" />
+        </div>
+        <div class="members-logo" role="listitem">
+          <img src="images/22.png" alt="" width="160" height="80" />
         </div>
       </div>
     </div>
@@ -92,7 +77,7 @@
   <section class="section-pad section-offwhite">
     <div class="container">
       <div class="section-heading">
-        <span class="section-label">The Club 32 Advantage</span>
+        <span class="section-label">The Club32 Advantage</span>
         <h2>Why Join Us</h2>
         <p>More than a golf club — a community of industry leaders who inspire, innovate, and give back.</p>
         <div class="gold-line"></div>
@@ -111,7 +96,7 @@
         <div class="card">
           <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></span>
           <h3>Community</h3>
-          <p>We believe in giving back. Club 32 actively supports charitable initiatives, including our annual Charity Day, reinforcing our commitment to making a positive impact beyond the fairway.</p>
+          <p>We believe in giving back. Club32 actively supports charitable initiatives, including our annual Charity Day, reinforcing our commitment to making a positive impact beyond the fairway.</p>
         </div>
       </div>
     </div>
@@ -123,7 +108,7 @@
       <div class="section-heading">
         <span class="section-label">Our Foundation</span>
         <h2>Our Values</h2>
-        <p>The principles that guide every member of Club 32.</p>
+        <p>The principles that guide every member of Club32.</p>
         <div class="gold-line"></div>
       </div>
       <div class="values-strip">
@@ -212,7 +197,7 @@
             <h2 class="footer-col-title">Explore</h2>
             <ul class="footer-link-list">
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Club 32</a></li>
+              <li><a href="about.html">About Club32</a></li>
               <li><a href="membership.html">Membership</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -221,7 +206,7 @@
             <h2 class="footer-col-title">Club snapshot</h2>
             <a href="about.html" class="footer-feature">
               <div class="footer-feature-media">
-                <img src="images/favicon.svg" alt="" width="56" height="56" />
+                <img src="images/icon.png" alt="" width="56" height="56" />
               </div>
               <div class="footer-feature-body">
                 <h3 class="footer-feature-title">32 members. One shared purpose.</h3>
@@ -244,8 +229,8 @@
 
         <div class="footer-mid">
           <a href="index.html" class="footer-mid-brand">
-            <img src="images/favicon.svg" alt="" width="48" height="48" />
-            <span class="footer-mid-wordmark">Club <span>32</span></span>
+            <img src="images/icon.png" alt="" width="48" height="48" />
+            <span class="footer-mid-wordmark">Club<span>32</span></span>
           </a>
           <div class="footer-mid-aside">
             <div class="footer-mid-rule" aria-hidden="true"></div>
@@ -258,7 +243,7 @@
 
         <div class="footer-legal">
           <p>
-            <span class="footer-legal-em">&copy; 2026 Club 32</span><span class="footer-legal-sep" aria-hidden="true"> | </span><span class="footer-legal-rest">All rights reserved.</span>
+            <span class="footer-legal-em">&copy; 2026 Club32</span><span class="footer-legal-sep" aria-hidden="true"> | </span><span class="footer-legal-rest">All rights reserved.</span>
           </p>
         </div>
       </div>
