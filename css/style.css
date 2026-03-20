@@ -24,6 +24,7 @@
   --radius-lg:   10px;
   --transition:  all 0.25s ease;
   --header-h:    72px;
+  --content-max: 1240px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -71,7 +72,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 /* ── Layout ── */
 .container {
-  max-width: 1120px;
+  max-width: var(--content-max);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -96,7 +97,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  max-width: 1120px;
+  max-width: var(--content-max);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -215,7 +216,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 }
 
 .hero-home-inner {
-  max-width: 1120px;
+  max-width: var(--content-max);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -283,7 +284,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1120px;
+  max-width: var(--content-max);
   margin: 0 auto;
   padding: calc(var(--header-h) + 2.5rem) 1.5rem 3.5rem;
   box-sizing: border-box;
@@ -336,7 +337,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 .hero-banner > .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 1120px;
+  max-width: var(--content-max);
   margin: 0 auto;
   padding: calc(var(--header-h) + 2.5rem) 1.5rem 3rem;
   width: 100%;
@@ -850,6 +851,7 @@ label {
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 select,
 textarea {
   width: 100%;
@@ -873,6 +875,43 @@ input:focus, select:focus, textarea:focus {
 textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+.form-group--checkbox {
+  margin-bottom: 1.5rem;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text-body);
+  text-transform: none;
+  letter-spacing: normal;
+  cursor: pointer;
+}
+
+.form-checkbox input[type="checkbox"] {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  accent-color: var(--green-dark);
+  cursor: pointer;
+}
+
+.form-submit-note__link {
+  color: var(--green);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.form-submit-note__link:hover {
+  opacity: 0.85;
 }
 
 /* ── Contact cards ── */
@@ -995,11 +1034,11 @@ textarea {
 }
 
 .footer-tagline-title {
-  font-family: 'Tenor Sans', sans-serif;
-  font-size: clamp(1.25rem, 2.8vw, 1.85rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.0625rem, 2vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.55;
   color: var(--text-dark);
   margin: 0 auto;
   max-width: 36rem;
@@ -1549,7 +1588,7 @@ textarea {
   .contact-form { padding: 1.75rem 1.25rem; }
 }
 
-/* ── Contact page: form note, treasurer, membership note ── */
+/* ── Contact page: form note, treasurer panel, membership note ── */
 .form-submit-note {
   font-size: 0.8125rem;
   color: var(--text-muted);
@@ -1557,21 +1596,35 @@ textarea {
   margin-top: 1rem;
 }
 
-.treasurer-highlight {
-  background: var(--green-dark);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem;
-  max-width: 560px;
+.contact-form__submit {
+  width: 100%;
+  font-size: 0.95rem;
+  padding: 1rem 1.25rem;
+}
+
+/* Treasurer + banking (contact page) */
+.treasurer-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 920px;
   margin: 0 auto;
+  align-items: stretch;
+}
+
+.treasurer-panel__bio {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2rem 2.25rem;
   text-align: center;
 }
 
-.treasurer-highlight .t-avatar {
+.treasurer-panel__bio .t-avatar {
   width: 72px;
   height: 72px;
-  background: rgba(255,255,255,0.1);
-  border: 2px solid rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.28);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1583,20 +1636,97 @@ textarea {
   margin: 0 auto 1rem;
 }
 
-.treasurer-highlight h3 { color: var(--white); margin-bottom: 0.25rem; }
+.treasurer-panel__bio h3 {
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
 
-.treasurer-highlight .t-role {
+.treasurer-panel__bio .t-role {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: 1rem;
 }
 
-.treasurer-highlight p {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.8);
-  line-height: 1.7;
+.treasurer-panel__lede {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.75;
+  margin: 0;
+  text-align: center;
+}
+
+.treasurer-panel__bank {
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  align-self: stretch;
+}
+
+.bank-details__title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 1rem;
+}
+
+.bank-details-list {
+  margin: 0;
+}
+
+.bank-details-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+}
+
+.bank-details-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.bank-details-row:first-child {
+  padding-top: 0;
+}
+
+.bank-details-row dt {
+  color: rgba(255, 255, 255, 0.52);
+  font-weight: 500;
+}
+
+.bank-details-row dd {
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  text-align: right;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .treasurer-panel {
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: 2rem;
+  }
+
+  .treasurer-panel__bio {
+    text-align: left;
+    padding: 2.25rem 2.5rem;
+  }
+
+  .treasurer-panel__bio .t-avatar {
+    margin: 0 0 1.25rem;
+  }
+
+  .treasurer-panel__lede {
+    text-align: left;
+  }
 }
 
 .membership-note {
@@ -1622,6 +1752,439 @@ textarea {
 .membership-note h4 { color: var(--green); margin-bottom: 0.5rem; }
 
 .membership-note p { font-size: 0.9rem; color: var(--text-body); margin: 0; }
+
+.membership-note__link {
+  color: var(--green);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.membership-note__link:hover {
+  opacity: 0.8;
+}
+
+/* ── Contact page ── */
+.page-contact__main {
+  position: relative;
+}
+
+.page-contact__form-section {
+  background: var(--white);
+}
+
+.page-contact__section-heading {
+  margin-bottom: 2.75rem;
+}
+
+.page-contact__section-heading--on-dark p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.page-contact__intro {
+  text-align: center;
+  max-width: 34rem;
+  margin: 0 auto 3.25rem;
+}
+
+.page-contact__intro .section-label {
+  margin-bottom: 0.5rem;
+}
+
+.page-contact__intro h2 {
+  margin-bottom: 0;
+}
+
+/* Row 1: both column heads; row 2: both forms (equal card height) */
+.page-contact__forms {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 2rem;
+  row-gap: 1.25rem;
+  align-items: start;
+}
+
+.page-contact__forms > .page-contact__form-head:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.page-contact__forms > .page-contact__form-head:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.page-contact__forms > .page-contact__form-cell:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: stretch;
+}
+
+.page-contact__forms > .page-contact__form-cell:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: stretch;
+}
+
+.page-contact__form-head {
+  margin: 0;
+  min-width: 0;
+}
+
+.page-contact__form-cell {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+.page-contact__form-cell .page-contact__form-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.page-contact .page-contact__form-card form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Absorb vertical space in the textarea so gaps sit inside the field, not above the button */
+.page-contact #contact-enquiry-form .page-contact__message-grow {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  min-height: 0;
+}
+
+.page-contact #contact-enquiry-form .page-contact__message-grow textarea {
+  flex: 1 1 auto;
+  min-height: 6.25rem;
+  resize: vertical;
+}
+
+.page-contact #membership-application-form .page-contact__background-grow {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  min-height: 0;
+}
+
+.page-contact #membership-application-form .page-contact__background-grow textarea {
+  flex: 1 1 auto;
+  min-height: 6.25rem;
+  resize: vertical;
+}
+
+.page-contact #membership-application-form .form-group--checkbox {
+  flex-shrink: 0;
+}
+
+/*
+  Footer: margin-top auto pins to card bottom. Fixed note height keeps both submit
+  buttons on one line; kept short to avoid a tall empty band under short copy.
+*/
+.page-contact .contact-form__footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.page-contact .contact-form__footer .contact-form__submit {
+  flex-shrink: 0;
+}
+
+.page-contact .contact-form__note-slot {
+  flex: 0 0 auto;
+  height: 4.5rem;
+  margin-top: 0.65rem;
+  display: flex;
+  align-items: flex-start;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-contact .contact-form__note-slot .form-submit-note {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: left;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .page-contact__forms {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+
+  .page-contact__forms > .page-contact__form-head:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .page-contact__forms > .page-contact__form-cell:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .page-contact__forms > .page-contact__form-head:nth-child(2) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .page-contact__forms > .page-contact__form-cell:nth-child(4) {
+    grid-column: 1;
+    grid-row: 4;
+  }
+}
+
+.page-contact__form-block-title {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--green-dark);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+  line-height: 1.3;
+}
+
+.page-contact__form-block-lede {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.page-contact__text-link {
+  color: var(--green);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.page-contact__text-link:hover {
+  opacity: 0.85;
+}
+
+.page-contact .page-contact__form-card {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 2rem 2rem 1rem;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+  background: var(--white);
+}
+
+.page-contact .section-navy.page-contact__committee {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-contact .section-navy.page-contact__committee::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 75% 55% at 50% 0%, rgba(255, 255, 255, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.page-contact .section-navy.page-contact__committee .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Contact: Executive Committee (redesigned) ── */
+.page-contact__committee .committee-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.page-contact__committee .committee-showcase__lead {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .page-contact__committee .committee-showcase__lead {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.page-contact__committee .committee-feature {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.75rem 1.65rem 1.85rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.page-contact__committee .committee-feature:hover {
+  background: rgba(255, 255, 255, 0.095);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.page-contact__committee .committee-feature--accent {
+  border-left: 3px solid rgba(255, 255, 255, 0.42);
+  padding-left: calc(1.65rem - 3px);
+}
+
+.page-contact__committee .committee-feature__avatar {
+  flex-shrink: 0;
+  width: 3.35rem;
+  height: 3.35rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--white);
+}
+
+.page-contact__committee .committee-feature__content {
+  min-width: 0;
+}
+
+.page-contact__committee .committee-feature__name {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 0 0 0.4rem;
+}
+
+.page-contact__committee .committee-feature__role {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+  margin: 0 0 0.85rem;
+}
+
+.page-contact__committee .committee-feature__bio {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+.page-contact__committee .committee-showcase__label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+  margin: 0 0 1.1rem;
+}
+
+.page-contact__committee .committee-captains {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.page-contact__committee .committee-captain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.15rem 1.2rem 1.2rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.page-contact__committee .committee-captain:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.page-contact__committee .committee-captain__head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.page-contact__committee .committee-captain__avatar {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--white);
+}
+
+.page-contact__committee .committee-captain__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.page-contact__committee .committee-captain__name {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.page-contact__committee .committee-captain__role {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.page-contact__committee .committee-captain__bio {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
+}
 
 @media (max-width: 480px) {
   .committee-grid { grid-template-columns: 1fr 1fr; }
