@@ -2127,12 +2127,12 @@ textarea {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   color: rgba(255, 255, 255, 0.1);
   line-height: 1;
-  font-weight: 300;
   transition: color 0.3s ease;
 }
 
 .values-premium__icon i {
-  font-weight: 300;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
 }
 
 .values-premium__card:hover .values-premium__icon {
