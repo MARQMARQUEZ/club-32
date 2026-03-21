@@ -251,7 +251,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 7.5rem 2rem 2rem;
+    padding: 10rem 2rem 2rem;
     gap: 0;
     z-index: 1000;
   }
