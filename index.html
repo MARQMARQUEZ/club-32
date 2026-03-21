@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Club32 — Premier Golf Club</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-  <link rel="stylesheet" href="css/style.css?v=20260320-prefooter-cta" />
+  <link rel="stylesheet" href="css/style.css?v=20260321-prefooter-heading" />
   <link rel="stylesheet" href="css/icons.css?v=20260320-values-icons" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -35,108 +35,117 @@
   <section class="hero-home" aria-label="Welcome">
     <div class="hero-home-inner">
       <div class="hero-home-media">
-        <img src="images/hero.jpg" alt="Club32 — Premier golf membership" width="1920" height="815" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/heromobile.jpg" />
+          <img src="images/hero.jpg" alt="Club32 — Premier golf membership" width="1920" height="815" />
+        </picture>
       </div>
     </div>
   </section>
 
-  <!-- Who We Are -->
-  <section class="section-who" aria-labelledby="who-heading">
-    <div class="who-inner">
-      <p class="who-eyebrow">Who We Are</p>
-      <h2 id="who-heading" class="who-heading">A Private Club for Industry Leaders</h2>
-      <p class="who-body">32 members. Consumer goods. One purpose.</p>
-      <a href="about.html" class="who-cta btn btn-gold">Discover Our Story</a>
-      <div class="who-stats" aria-label="At a glance">
-        <span class="who-stats__item"><strong>32</strong> Members</span>
-        <span class="who-stats__item"><strong>6</strong> Sectors</span>
-        <span class="who-stats__item"><strong>2026</strong> Committee</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Members — logo carousel -->
-  <section class="section-members" aria-labelledby="members-heading">
+  <!-- Who We Are — unified premium section (matches Vision & Purpose style) -->
+  <section class="section-pad section-vision-premium section-who-home" aria-labelledby="who-heading">
     <div class="container">
-      <h2 id="members-heading" class="members-heading">Members</h2>
-      <div class="members-logos" role="list">
-        <div class="members-logo" role="listitem">
-          <img src="images/20.png" alt="" width="160" height="80" />
-        </div>
-        <div class="members-logo" role="listitem">
-          <img src="images/21.png" alt="" width="160" height="80" />
-        </div>
-        <div class="members-logo" role="listitem">
-          <img src="images/22.png" alt="" width="160" height="80" />
-        </div>
+      <header class="vision-premium__head">
+        <p class="vision-premium__kicker">Who We Are</p>
+        <h2 id="who-heading" class="vision-premium__title">A Private Club for Industry Leaders</h2>
+      </header>
+
+      <div class="vision-premium__columns">
+        <article class="vision-premium__panel vision-premium__panel--vision">
+          <span class="vision-premium__index" aria-hidden="true">32</span>
+          <p class="vision-premium__label">The Club</p>
+          <blockquote class="vision-premium__quote">
+            <p class="vision-premium__quote-lead">32 members. Consumer goods. One purpose.</p>
+            <p>An exclusive network of senior professionals from across the consumer goods industry, united by a shared passion for golf and a commitment to meaningful connections.</p>
+          </blockquote>
+        </article>
+
+        <article class="vision-premium__panel vision-premium__panel--purpose who-home__glance">
+          <span class="vision-premium__index" aria-hidden="true">01</span>
+          <p class="vision-premium__label">At a Glance</p>
+          <blockquote class="vision-premium__quote">
+            <p class="vision-premium__quote-lead">32 Members · 6 Sectors · 2026 Committee</p>
+            <p>We welcome aligned professionals from retail, wholesale, pharmacy, liquor, pet trade, and beyond.</p>
+          </blockquote>
+          <div class="who-home__logos" role="list" aria-label="Member companies">
+            <img src="images/20.png" alt="" width="100" height="50" />
+            <img src="images/22.png" alt="" width="100" height="50" />
+            <img src="images/21.png" alt="" width="100" height="50" />
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Why Join Us -->
-  <section class="section-pad section-offwhite">
+  <!-- Why Join Us — premium minimal style -->
+  <section class="section-pad section-why-premium" aria-labelledby="why-heading">
     <div class="container">
-      <div class="section-heading">
-        <span class="section-label">The Club32 Advantage</span>
-        <h2>Why Join Us</h2>
-        <p>More than a golf club — a community of industry leaders who inspire, innovate, and give back.</p>
-        <div class="gold-line"></div>
-      </div>
-      <div class="card-grid-3">
-        <div class="card">
-          <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></span>
-          <h3>Networking</h3>
-          <p>Build meaningful relationships with senior professionals across the consumer goods landscape. Every round opens doors to new partnerships, collaborations, and opportunities that transcend the golf course.</p>
-        </div>
-        <div class="card">
-          <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-golf-ball-tee"></i></span>
-          <h3>World-Class Golf</h3>
-          <p>Play at premier courses in a well-organised, competitive yet collegial environment. Our structured tournaments are thoughtfully curated to deliver an exceptional golfing experience for players of all handicaps.</p>
-        </div>
-        <div class="card">
-          <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></span>
-          <h3>Community</h3>
-          <p>We believe in giving back. Club32 actively supports charitable initiatives, including our annual Charity Day, reinforcing our commitment to making a positive impact beyond the fairway.</p>
-        </div>
+      <header class="why-premium__head">
+        <p class="why-premium__kicker">The Club32 Advantage</p>
+        <h2 id="why-heading" class="why-premium__title">Why Join Us</h2>
+      </header>
+
+      <div class="why-premium__grid">
+        <article class="why-premium__card">
+          <span class="why-premium__number" aria-hidden="true">01</span>
+          <h3 class="why-premium__card-title">Networking</h3>
+          <p class="why-premium__card-text">Build meaningful relationships with senior professionals across the consumer goods landscape. Every round opens doors to new partnerships, collaborations, and opportunities that transcend the golf course.</p>
+        </article>
+
+        <article class="why-premium__card">
+          <span class="why-premium__number" aria-hidden="true">02</span>
+          <h3 class="why-premium__card-title">World-Class Golf</h3>
+          <p class="why-premium__card-text">Play at premier courses in a well-organised, competitive yet collegial environment. Our structured tournaments are thoughtfully curated to deliver an exceptional golfing experience for players of all handicaps.</p>
+        </article>
+
+        <article class="why-premium__card">
+          <span class="why-premium__number" aria-hidden="true">03</span>
+          <h3 class="why-premium__card-title">Community</h3>
+          <p class="why-premium__card-text">We believe in giving back. Club32 actively supports charitable initiatives, including our annual Charity Day, reinforcing our commitment to making a positive impact beyond the fairway.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Our Values -->
-  <section class="section-pad-sm">
+  <!-- Our Values — premium minimal style -->
+  <section class="section-pad section-values-premium" aria-labelledby="values-heading">
     <div class="container">
-      <div class="section-heading">
-        <span class="section-label">Our Foundation</span>
-        <h2>Our Values</h2>
-        <p>The principles that guide every member of Club32.</p>
-        <div class="gold-line"></div>
-      </div>
-      <div class="values-strip">
-        <div class="value-item">
-          <span class="value-icon" aria-hidden="true"><i class="fa-solid fa-medal"></i></span>
-          <h4>Respect</h4>
-          <p>Treating every member and guest with courtesy and dignity</p>
-        </div>
-        <div class="value-item">
-          <span class="value-icon" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>
-          <h4>Integrity</h4>
-          <p>Upholding honesty and ethical conduct in all interactions</p>
-        </div>
-        <div class="value-item">
-          <span class="value-icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span>
-          <h4>Professionalism</h4>
-          <p>Maintaining the highest standards of conduct at all times</p>
-        </div>
-        <div class="value-item">
-          <span class="value-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
-          <h4>Inclusivity</h4>
-          <p>Welcoming diversity of background, experience, and perspective</p>
-        </div>
-        <div class="value-item">
-          <span class="value-icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
-          <h4>Accountability</h4>
-          <p>Taking responsibility for our actions and commitments</p>
-        </div>
+      <header class="values-premium__head">
+        <p class="values-premium__kicker">Our Foundation</p>
+        <h2 id="values-heading" class="values-premium__title">Our Values</h2>
+      </header>
+
+      <div class="values-premium__grid">
+        <article class="values-premium__card">
+          <span class="values-premium__icon" aria-hidden="true"><i class="fa-solid fa-medal"></i></span>
+          <h3 class="values-premium__card-title">Respect</h3>
+          <p class="values-premium__card-text">Treating every member and guest with courtesy and dignity</p>
+        </article>
+
+        <article class="values-premium__card">
+          <span class="values-premium__icon" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></span>
+          <h3 class="values-premium__card-title">Integrity</h3>
+          <p class="values-premium__card-text">Upholding honesty and ethical conduct in all interactions</p>
+        </article>
+
+        <article class="values-premium__card">
+          <span class="values-premium__icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span>
+          <h3 class="values-premium__card-title">Professionalism</h3>
+          <p class="values-premium__card-text">Maintaining the highest standards of conduct at all times</p>
+        </article>
+
+        <article class="values-premium__card">
+          <span class="values-premium__icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
+          <h3 class="values-premium__card-title">Inclusivity</h3>
+          <p class="values-premium__card-text">Welcoming diversity of background and perspective</p>
+        </article>
+
+        <article class="values-premium__card">
+          <span class="values-premium__icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+          <h3 class="values-premium__card-title">Accountability</h3>
+          <p class="values-premium__card-text">Taking responsibility for our actions and commitments</p>
+        </article>
       </div>
     </div>
   </section>
@@ -157,73 +166,33 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-body">
-      <div class="container footer-wrap">
-        <div class="footer-columns">
-          <div class="footer-col footer-col-contact">
-            <h2 class="footer-col-title">Get in touch</h2>
-            <ul class="footer-icon-list">
-              <li>
-                <a href="contact.html">
-                  <span class="footer-icon-list-icon" aria-hidden="true"><i class="fas fa-envelope-open"></i></span>
-                  <span class="footer-icon-list-text">
-                    <strong>General enquiries</strong>
-                    <span class="footer-icon-list-sub">Use the contact form — a committee member will reply.</span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="contact.html">
-                  <span class="footer-icon-list-icon" aria-hidden="true"><i class="fas fa-file-invoice-dollar"></i></span>
-                  <span class="footer-icon-list-text">
-                    <strong>Payments &amp; EFT</strong>
-                    <span class="footer-icon-list-sub">Treasurer: Jose Correia — include your query in the form.</span>
-                  </span>
-                </a>
-              </li>
-            </ul>
+  <footer class="footer-minimal">
+    <div class="footer-minimal__main">
+      <div class="container">
+        <div class="footer-minimal__grid">
+          <div class="footer-minimal__brand">
+            <a href="index.html" class="footer-minimal__logo" aria-label="Club32 home">
+              <img src="images/icon.png" alt="" width="64" height="64" />
+            </a>
+            <p class="footer-minimal__tagline">Premier golf membership for consumer goods professionals.</p>
           </div>
-          <nav class="footer-col footer-col-nav" aria-label="Explore">
-            <h2 class="footer-col-title">Explore</h2>
-            <ul class="footer-link-list">
+          <nav class="footer-minimal__nav" aria-label="Footer navigation">
+            <ul class="footer-minimal__links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Club32</a></li>
+              <li><a href="about.html">About</a></li>
               <li><a href="membership.html">Membership</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
-          <div class="footer-col">
-            <h2 class="footer-col-title">From the club</h2>
-            <a href="about.html" class="footer-feature footer-feature--text-only">
-              <div class="footer-feature-body">
-                <h3 class="footer-feature-title">32 members. One shared purpose.</h3>
-                <p class="footer-feature-meta">Application only · Proposed by a member</p>
-                <span class="footer-feature-more">Read more »</span>
-              </div>
-            </a>
-          </div>
-          <div class="footer-col footer-col-cta">
-            <h2 class="footer-col-title">Membership</h2>
-            <div class="footer-cta-panel">
-              <p class="footer-cta-deck">Limited to 32 fully paid-up members. We welcome aligned professionals from across consumer goods.</p>
-              <a href="membership.html" class="footer-cta-link">View membership options</a>
-            </div>
-          </div>
-          <div class="footer-col footer-col-mark">
-            <a href="index.html" class="footer-crest" aria-label="Club32 home">
-              <img src="images/icon.png" alt="" width="112" height="112" />
-            </a>
+          <div class="footer-minimal__cta">
+            <a href="membership.html" class="footer-minimal__btn">Join Club32</a>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="footer-legal">
-      <div class="footer-legal-plaque">
-        <p>
-          <span class="footer-legal-em">&copy; 2026 Club32</span><span class="footer-legal-sep" aria-hidden="true"> | </span><span class="footer-legal-rest">Copyright · All rights reserved</span><span class="footer-legal-sep" aria-hidden="true"> | </span><span class="footer-legal-credit">Built by BlockSeven</span>
-        </p>
+    <div class="footer-minimal__legal">
+      <div class="container">
+        <p class="footer-minimal__copyright">&copy; 2026 Club32 &nbsp;·&nbsp; Copyright &nbsp;·&nbsp; Built by BlockSeven</p>
       </div>
     </div>
   </footer>
