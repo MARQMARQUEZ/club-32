@@ -756,9 +756,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 @media (max-width: 767px) {
   .conduct-charter__header {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
   }
 }
 
@@ -794,8 +792,8 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 @media (max-width: 767px) {
   .conduct-charter__statement {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -897,9 +895,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 .section-community-premium.section-pad {
   padding-top: clamp(4.5rem, 9vw, 7rem);
   padding-bottom: clamp(4.5rem, 9vw, 7rem);
-  background:
-    radial-gradient(ellipse 70% 45% at 70% 100%, rgba(0, 0, 0, 0.025) 0%, transparent 50%),
-    linear-gradient(180deg, var(--off-white) 0%, #f5f5f5 48%, var(--off-white) 100%);
+  background: var(--white);
 }
 
 .community-premium__head {
@@ -1015,11 +1011,9 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
 /* ── Executive Committee (About) — premium board ── */
 .section-committee-premium.section-pad {
-  padding-top: clamp(4.5rem, 9vw, 7rem);
-  padding-bottom: clamp(4.5rem, 9vw, 7rem);
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0, 0, 0, 0.03) 0%, transparent 55%),
-    linear-gradient(180deg, var(--off-white) 0%, #f3f3f3 42%, var(--off-white) 100%);
+  padding-top: clamp(2.5rem, 5.5vw, 4rem);
+  padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+  background: var(--white);
 }
 
 .committee-premium__head {
@@ -1123,6 +1117,7 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   gap: clamp(1.15rem, 2.8vw, 2rem);
   text-align: left;
   padding: clamp(1.45rem, 2.8vw, 2rem) clamp(1.45rem, 2.8vw, 2.15rem);
+  justify-content: flex-start;
 }
 
 .committee-premium__card--chair::after {
@@ -1234,6 +1229,31 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   margin: 0;
 }
 
+.committee-premium__contact {
+  position: relative;
+  z-index: 3;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  margin-left: auto;
+  text-align: right;
+}
+
+.committee-premium__contact a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.committee-premium__contact a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
 .committee-premium__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1279,6 +1299,12 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 
   .committee-premium__card--chair .committee-premium__avatar {
     margin: 0 auto;
+  }
+
+  .committee-premium__card--chair .committee-premium__contact {
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .committee-premium__hcp {
@@ -1381,6 +1407,45 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
 .membership-card.featured ul li::before { color: var(--white); }
 
 .membership-card.featured ul li { color: rgba(255,255,255,0.85); }
+
+/* Membership cards on dark background — white card with black text */
+.section-conduct-charter .membership-card:not(.featured) {
+  background: var(--white);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-body);
+}
+
+.section-conduct-charter .membership-card:not(.featured):hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.section-conduct-charter .membership-card:not(.featured)::before {
+  background: #666666;
+}
+
+.section-conduct-charter .membership-card:not(.featured) h3 {
+  color: var(--green-dark);
+}
+
+.section-conduct-charter .membership-card:not(.featured) .price {
+  color: var(--green-dark) !important;
+}
+
+.section-conduct-charter .membership-card:not(.featured) .price-note {
+  color: var(--text-muted) !important;
+}
+
+.section-conduct-charter .membership-card:not(.featured) ul li {
+  color: var(--text-body);
+}
+
+.section-conduct-charter .membership-card:not(.featured) ul li::before {
+  color: var(--green-dark);
+}
+
+.section-conduct-charter .membership-card:not(.featured) .section-label {
+  color: var(--text-muted);
+}
 
 /* ── Steps ── */
 .steps {
@@ -1490,6 +1555,7 @@ textarea {
   border-radius: var(--radius);
   font-family: 'Outfit', sans-serif;
   font-size: 0.9375rem;
+  font-weight: 400;
   color: var(--text-dark);
   background: var(--white);
   transition: var(--transition);
@@ -1497,9 +1563,33 @@ textarea {
   appearance: none;
 }
 
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+select.placeholder-shown,
+select:invalid {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+select option {
+  color: var(--text-dark);
+  font-weight: 400;
+}
+
+select option[disabled] {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
 input:focus, select:focus, textarea:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04);
 }
 
 textarea {
@@ -1737,6 +1827,127 @@ textarea {
   .vision-premium__panel--vision,
   .vision-premium__panel--purpose {
     transform: none;
+  }
+}
+
+/* ── Eligibility (Membership) — light panels, 2×2 grid ── */
+.section-eligibility-premium.section-pad {
+  padding-top: clamp(2.5rem, 5.5vw, 4rem);
+  padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+  background: var(--white);
+}
+
+.eligibility-premium__head {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
+}
+
+.eligibility-premium__kicker {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.38);
+  margin-bottom: 1rem;
+}
+
+.eligibility-premium__title {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--green-dark);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.eligibility-premium__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.eligibility-premium__panel {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  padding: clamp(1.75rem, 3.5vw, 2.25rem) clamp(1.5rem, 3vw, 2rem);
+  background: var(--off-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.eligibility-premium__panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.eligibility-premium__panel--highlight {
+  background: linear-gradient(145deg, #fafafa 0%, #f5f5f5 100%);
+  border-left: 3px solid var(--green-dark);
+}
+
+.eligibility-premium__index {
+  position: absolute;
+  z-index: 0;
+  top: 0.5rem;
+  right: clamp(0.75rem, 2vw, 1.25rem);
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.04);
+  letter-spacing: -0.06em;
+  user-select: none;
+  pointer-events: none;
+}
+
+.eligibility-premium__label {
+  position: relative;
+  z-index: 1;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.35);
+  margin: 0 0 1rem;
+}
+
+.eligibility-premium__content {
+  position: relative;
+  z-index: 1;
+}
+
+.eligibility-premium__name {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--green-dark);
+  margin: 0 0 0.75rem;
+}
+
+.eligibility-premium__text {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.9rem, 1vw, 0.9375rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .eligibility-premium__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }
 
@@ -2564,6 +2775,16 @@ textarea {
   min-width: 0;
 }
 
+.page-contact__form-head--centered {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .page-contact__form-head--centered {
+    text-align: left;
+  }
+}
+
 .page-contact__form-cell {
   display: flex;
   flex-direction: column;
@@ -2919,4 +3140,113 @@ textarea {
 
 @media (max-width: 480px) {
   .steps { grid-template-columns: 1fr; }
+}
+
+/* ── Integrated Form Panels (Contact page) ── */
+.page-contact__forms-integrated {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.form-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+}
+
+.form-panel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.form-panel__header {
+  position: relative;
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2rem);
+  background: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+
+.form-panel__index {
+  position: absolute;
+  top: 0.5rem;
+  right: clamp(1rem, 2vw, 1.5rem);
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.06);
+  letter-spacing: -0.04em;
+  user-select: none;
+  pointer-events: none;
+}
+
+.form-panel__header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.form-panel__title {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--green-dark);
+  margin: 0 0 0.35rem;
+}
+
+.form-panel__subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.form-panel__body {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: transparent;
+}
+
+.form-panel__body .form-group {
+  margin-bottom: 1.15rem;
+}
+
+.form-panel__body .form-group:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.form-panel__body textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-panel__submit {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .page-contact__forms-integrated {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }

@@ -33,7 +33,10 @@
   <section class="hero-home" aria-label="About Club32">
     <div class="hero-home-inner">
       <div class="hero-home-media">
-        <img src="images/About%20Club.jpg" alt="Club32 — About our club" width="1920" height="815" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/aboutclubmobile.jpg" />
+          <img src="images/About%20Club.jpg" alt="Club32 — About our club" width="1920" height="815" />
+        </picture>
       </div>
     </div>
   </section>
@@ -74,7 +77,6 @@
       <header class="committee-premium__head">
         <p class="committee-premium__kicker">Leadership</p>
         <h2 id="committee-heading" class="committee-premium__title">Executive Committee 2026</h2>
-        <p class="committee-premium__deck">The dedicated individuals who steer Club32 with passion, integrity, and vision.</p>
       </header>
 
       <div class="committee-premium__board">
@@ -85,6 +87,10 @@
             <h3 class="committee-premium__name">Antony Mathews</h3>
             <p class="committee-premium__role">Chairman</p>
           </div>
+          <p class="committee-premium__contact">
+            <a href="mailto:antony.mathews@tigerbrands.com">antony.mathews@tigerbrands.com</a><br>
+            <a href="tel:+27824648694">+27 82 464 8694</a>
+          </p>
         </article>
 
         <div class="committee-premium__grid" role="list">
@@ -179,28 +185,30 @@
   </section>
 
   <!-- ── Our Community ── -->
-  <section class="section-pad section-community-premium" aria-labelledby="community-heading">
+  <section class="section-pad section-why-premium" aria-labelledby="community-heading">
     <div class="container">
-      <header class="community-premium__head">
-        <p class="community-premium__kicker">Beyond the fairway</p>
-        <h2 id="community-heading" class="community-premium__title">Our community</h2>
-        <p class="community-premium__deck">Club32 is built on the belief that great professionals give back. We are committed to making a meaningful difference.</p>
+      <header class="why-premium__head">
+        <p class="why-premium__kicker">Beyond the fairway</p>
+        <h2 id="community-heading" class="why-premium__title">Our community</h2>
       </header>
-      <div class="community-premium__grid">
-        <article class="community-premium__card">
-          <p class="community-premium__label">Giving back</p>
-          <h3 class="community-premium__name">Annual Charity Day</h3>
-          <p class="community-premium__text">Each year, Club32 hosts a dedicated Charity Day tournament, raising funds for causes that matter to our members and the communities we serve.</p>
+
+      <div class="why-premium__grid">
+        <article class="why-premium__card">
+          <span class="why-premium__number" aria-hidden="true">01</span>
+          <h3 class="why-premium__card-title">Annual Charity Day</h3>
+          <p class="why-premium__card-text">Each year, Club32 hosts a dedicated Charity Day tournament, raising funds for causes that matter to our members and the communities we serve.</p>
         </article>
-        <article class="community-premium__card">
-          <p class="community-premium__label">Who we are</p>
-          <h3 class="community-premium__name">Diversity &amp; inclusion</h3>
-          <p class="community-premium__text">We celebrate the rich diversity of the consumer goods industry. Our membership reflects a broad spectrum of backgrounds, experience, and expertise.</p>
+
+        <article class="why-premium__card">
+          <span class="why-premium__number" aria-hidden="true">02</span>
+          <h3 class="why-premium__card-title">Diversity &amp; Inclusion</h3>
+          <p class="why-premium__card-text">We celebrate the rich diversity of the consumer goods industry. Our membership reflects a broad spectrum of backgrounds, experience, and expertise.</p>
         </article>
-        <article class="community-premium__card">
-          <p class="community-premium__label">Collective influence</p>
-          <h3 class="community-premium__name">Industry impact</h3>
-          <p class="community-premium__text">Through meaningful conversations on and off the course, our members collectively shape the future of retail, wholesale, pharmacy, liquor, and pet trade sectors.</p>
+
+        <article class="why-premium__card">
+          <span class="why-premium__number" aria-hidden="true">03</span>
+          <h3 class="why-premium__card-title">Industry Impact</h3>
+          <p class="why-premium__card-text">Through meaningful conversations on and off the course, our members collectively shape the future of retail, wholesale, pharmacy, liquor, and pet trade sectors.</p>
         </article>
       </div>
     </div>
@@ -213,7 +221,10 @@
         <h2 id="pre-footer-membership-heading" class="pre-footer-cta__heading">Ready to join Club32</h2>
       </div>
       <div class="hero-home-media">
-        <img src="images/team.jpg" alt="Club32 members on the course" width="1920" height="815" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/teammobile.jpg" />
+          <img src="images/team.jpg" alt="Club32 members on the course" width="1920" height="815" />
+        </picture>
       </div>
       <div class="pre-footer-cta__action">
         <a href="membership.html" class="pre-footer-cta__link">View membership option</a>

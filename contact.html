@@ -33,7 +33,10 @@
   <section class="hero-home" aria-label="Contact">
     <div class="hero-home-inner">
       <div class="hero-home-media">
-        <img src="images/contact%20us.jpg" alt="Club32 — Get in touch" width="1920" height="815" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/contactusmobile.jpg" />
+          <img src="images/contact%20us.jpg" alt="Club32 — Get in touch" width="1920" height="815" />
+        </picture>
       </div>
     </div>
   </section>
@@ -42,22 +45,16 @@
 
   <section class="section-pad page-contact__form-section" aria-labelledby="contact-heading">
     <div class="container">
-      <div class="page-contact__intro">
-        <span class="section-label">Contact</span>
-        <h2 id="contact-heading">Contact Club32</h2>
-      </div>
-
-      <div class="page-contact__forms">
-        <header class="page-contact__form-head" aria-labelledby="enquiry-heading">
-          <h3 class="page-contact__form-block-title" id="enquiry-heading">1. General enquiry</h3>
-          <p class="page-contact__form-block-lede">For questions about <strong>fees</strong>, <strong>EFT / payments</strong>, <strong>visitor rounds</strong>, or any general matter — the Executive Committee will reply.</p>
-        </header>
-        <header class="page-contact__form-head" aria-labelledby="apply-heading">
-          <h3 class="page-contact__form-block-title" id="apply-heading">2. Membership application</h3>
-          <p class="page-contact__form-block-lede">Anyone in an <strong>eligible sector</strong> may apply. Membership is limited to 32 members and subject to Executive Committee approval. <a href="membership.html" class="page-contact__text-link">Membership &amp; fees</a></p>
-        </header>
-        <div class="page-contact__form-cell">
-          <div class="contact-form page-contact__form-card">
+      <div class="page-contact__forms-integrated">
+        <div class="form-panel">
+          <header class="form-panel__header">
+            <span class="form-panel__index" aria-hidden="true">01</span>
+            <div class="form-panel__header-content">
+              <h3 class="form-panel__title" id="enquiry-heading">General enquiry</h3>
+              <p class="form-panel__subtitle">Fees, payments, or visitor rounds</p>
+            </div>
+          </header>
+          <div class="form-panel__body">
             <form id="contact-enquiry-form" action="#" method="post" novalidate aria-labelledby="enquiry-heading">
               <input type="hidden" name="form_type" value="contact_enquiry" />
               <div class="form-row">
@@ -80,43 +77,48 @@
                   <input type="text" id="cq-role" name="role" placeholder="e.g. Sales Director" autocomplete="organization-title" />
                 </div>
               </div>
-              <div class="form-group">
-                <label for="cq-sector">Industry sector</label>
-                <select id="cq-sector" name="sector">
-                  <option value="" disabled selected>Select sector</option>
-                  <option value="retail">Retail</option>
-                  <option value="wholesale">Wholesale</option>
-                  <option value="pharmacy">Pharmacy</option>
-                  <option value="liquor">Liquor</option>
-                  <option value="pet-trade">Pet trade</option>
-                  <option value="service-provider">Service provider</option>
-                  <option value="other">Other</option>
-                </select>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cq-sector">Industry sector</label>
+                  <select id="cq-sector" name="sector" required>
+                    <option value="" disabled selected>Select sector</option>
+                    <option value="retail">Retail</option>
+                    <option value="wholesale">Wholesale</option>
+                    <option value="pharmacy">Pharmacy</option>
+                    <option value="liquor">Liquor</option>
+                    <option value="pet-trade">Pet trade</option>
+                    <option value="service-provider">Service provider</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="cq-enquiry">Topic</label>
+                  <select id="cq-enquiry" name="enquiry" required>
+                    <option value="" disabled selected>Select topic</option>
+                    <option value="visitor">Reserve / visitor round</option>
+                    <option value="payment">Payment / EFT</option>
+                    <option value="general">General enquiry</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
-                <label for="cq-enquiry">Topic</label>
-                <select id="cq-enquiry" name="enquiry">
-                  <option value="" disabled selected>Select topic</option>
-                  <option value="visitor">Reserve / visitor round</option>
-                  <option value="payment">Payment / EFT</option>
-                  <option value="general">General enquiry</option>
-                </select>
-              </div>
-              <div class="form-group page-contact__message-grow">
                 <label for="cq-message">Message</label>
                 <textarea id="cq-message" name="message" placeholder="Your message"></textarea>
               </div>
-              <div class="contact-form__footer">
-                <button type="submit" class="btn btn-gold contact-form__submit">Send message</button>
-                <div class="contact-form__note-slot">
-                  <p class="form-submit-note">A committee member will reply to your enquiry.</p>
-                </div>
-              </div>
+              <button type="submit" class="btn btn-gold form-panel__submit">Send message</button>
             </form>
           </div>
         </div>
-        <div class="page-contact__form-cell" id="membership-application">
-          <div class="contact-form page-contact__form-card">
+
+        <div class="form-panel" id="membership-application">
+          <header class="form-panel__header">
+            <span class="form-panel__index" aria-hidden="true">02</span>
+            <div class="form-panel__header-content">
+              <h3 class="form-panel__title" id="apply-heading">Membership application</h3>
+              <p class="form-panel__subtitle">Subject to committee approval</p>
+            </div>
+          </header>
+          <div class="form-panel__body">
             <form id="membership-application-form" action="#" method="post" novalidate aria-labelledby="apply-heading">
               <input type="hidden" name="form_type" value="membership_application" />
               <div class="form-row">
@@ -131,20 +133,6 @@
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="app-phone">Phone</label>
-                  <input type="tel" id="app-phone" name="app_phone" placeholder="Optional" autocomplete="tel" />
-                </div>
-                <div class="form-group">
-                  <label for="app-membership-type">Applying as</label>
-                  <select id="app-membership-type" name="app_membership_type" required>
-                    <option value="" disabled selected>Select</option>
-                    <option value="full">Full member (annual)</option>
-                    <option value="reserve">Reserve / visitor</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
                   <label for="app-company">Company / organisation</label>
                   <input type="text" id="app-company" name="app_company" placeholder="Employer or business" autocomplete="organization" required />
                 </div>
@@ -153,39 +141,34 @@
                   <input type="text" id="app-role" name="app_role" placeholder="e.g. Sales Director" autocomplete="organization-title" required />
                 </div>
               </div>
-              <div class="form-group">
-                <label for="app-sector">Industry sector</label>
-                <select id="app-sector" name="app_sector" required>
-                  <option value="" disabled selected>Select sector</option>
-                  <option value="retail">Retail</option>
-                  <option value="wholesale">Wholesale</option>
-                  <option value="pharmacy">Pharmacy</option>
-                  <option value="liquor">Liquor</option>
-                  <option value="pet-trade">Pet trade</option>
-                  <option value="service-provider">Service provider</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="app-proposer">Club32 member you know (optional)</label>
-                <input type="text" id="app-proposer" name="app_proposer_name" placeholder="If a member referred you, add their name" />
-              </div>
-              <div class="form-group page-contact__background-grow">
-                <label for="app-background">Background and motivation</label>
-                <textarea id="app-background" name="app_background" placeholder="Brief professional background and why you wish to join" required></textarea>
-              </div>
-              <div class="form-group form-group--checkbox">
-                <label class="form-checkbox">
-                  <input type="checkbox" id="app-declare" name="app_declaration" value="1" required />
-                  <span>I understand that Club32 is limited to 32 members, that I must work in an eligible sector, and that the Executive Committee approves all applications.</span>
-                </label>
-              </div>
-              <div class="contact-form__footer">
-                <button type="submit" class="btn btn-gold contact-form__submit">Submit application</button>
-                <div class="contact-form__note-slot">
-                  <p class="form-submit-note">If approved, you will receive payment instructions. Do not pay until the committee confirms your membership.</p>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="app-sector">Industry sector</label>
+                  <select id="app-sector" name="app_sector" required>
+                    <option value="" disabled selected>Select sector</option>
+                    <option value="retail">Retail</option>
+                    <option value="wholesale">Wholesale</option>
+                    <option value="pharmacy">Pharmacy</option>
+                    <option value="liquor">Liquor</option>
+                    <option value="pet-trade">Pet trade</option>
+                    <option value="service-provider">Service provider</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="app-membership-type">Membership type</label>
+                  <select id="app-membership-type" name="app_membership_type" required>
+                    <option value="" disabled selected>Select type</option>
+                    <option value="full">Full member (annual)</option>
+                    <option value="reserve">Reserve / visitor</option>
+                  </select>
                 </div>
               </div>
+              <div class="form-group">
+                <label for="app-background">Why you want to join</label>
+                <textarea id="app-background" name="app_background" placeholder="Brief professional background and motivation for joining Club32" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-gold form-panel__submit">Submit application</button>
             </form>
           </div>
         </div>
@@ -193,88 +176,58 @@
     </div>
   </section>
 
-  <!-- ── Executive Committee Contacts ── -->
-  <section class="section-pad section-navy page-contact__committee" aria-labelledby="committee-heading">
+  <!-- ── Executive Committee ── -->
+  <section class="section-pad section-committee-premium" aria-labelledby="committee-heading">
     <div class="container">
-      <div class="section-heading page-contact__section-heading page-contact__section-heading--on-dark">
-        <span class="section-label">Our Leadership</span>
-        <h2 id="committee-heading">Executive Committee</h2>
-        <p>Club32's 2026 Executive Committee — here to lead, serve, and connect our members.</p>
-        <div class="gold-line"></div>
-      </div>
-      <div class="committee-showcase">
-        <div class="committee-showcase__lead">
-          <article class="committee-feature" aria-labelledby="committee-chair-name">
-            <div class="committee-feature__avatar" aria-hidden="true">AM</div>
-            <div class="committee-feature__content">
-              <h3 class="committee-feature__name" id="committee-chair-name">Antony Mathews</h3>
-              <p class="committee-feature__role">Chairman</p>
-              <p class="committee-feature__bio">Club leadership, strategic direction, and executive oversight of Club32.</p>
-            </div>
+      <header class="committee-premium__head">
+        <p class="committee-premium__kicker">Leadership</p>
+        <h2 id="committee-heading" class="committee-premium__title">Executive Committee</h2>
+      </header>
+
+      <div class="committee-premium__board">
+        <article class="committee-premium__card committee-premium__card--chair">
+          <div class="committee-premium__avatar" aria-hidden="true">A</div>
+          <div class="committee-premium__body">
+            <h3 class="committee-premium__name">Antony Mathews</h3>
+            <p class="committee-premium__role">Chairman</p>
+          </div>
+          <p class="committee-premium__contact">
+            <a href="mailto:antony.mathews@tigerbrands.com">antony.mathews@tigerbrands.com</a><br>
+            <a href="tel:+27824648694">+27 82 464 8694</a>
+          </p>
+        </article>
+
+        <div class="committee-premium__grid" role="list">
+          <article class="committee-premium__card" role="listitem">
+            <div class="committee-premium__avatar" aria-hidden="true">M</div>
+            <h3 class="committee-premium__name">Michael Meewes</h3>
+            <p class="committee-premium__role">Captain</p>
           </article>
-          <article class="committee-feature committee-feature--accent" aria-labelledby="committee-treasurer-name">
-            <div class="committee-feature__avatar" aria-hidden="true">JC</div>
-            <div class="committee-feature__content">
-              <h3 class="committee-feature__name" id="committee-treasurer-name">Jose Correia</h3>
-              <p class="committee-feature__role">Treasurer</p>
-              <p class="committee-feature__bio">All financial matters, membership fee payments, EFT confirmations, and payment queries.</p>
-            </div>
+          <article class="committee-premium__card" role="listitem">
+            <div class="committee-premium__avatar" aria-hidden="true">L</div>
+            <h3 class="committee-premium__name">Luigi Ferrini</h3>
+            <p class="committee-premium__role">Captain</p>
           </article>
-        </div>
-        <div class="committee-showcase__group">
-          <p class="committee-showcase__label" id="committee-captains-label">Captains</p>
-          <ul class="committee-captains" aria-labelledby="committee-captains-label">
-            <li class="committee-captain">
-              <div class="committee-captain__head">
-                <span class="committee-captain__avatar" aria-hidden="true">MM</span>
-                <div class="committee-captain__meta">
-                  <span class="committee-captain__name">Michael Meewes</span>
-                  <span class="committee-captain__role">Captain</span>
-                </div>
-              </div>
-              <p class="committee-captain__bio">Tournament organisation, player liaison, and on-course operations.</p>
-            </li>
-            <li class="committee-captain">
-              <div class="committee-captain__head">
-                <span class="committee-captain__avatar" aria-hidden="true">LF</span>
-                <div class="committee-captain__meta">
-                  <span class="committee-captain__name">Luigi Ferrini</span>
-                  <span class="committee-captain__role">Captain</span>
-                </div>
-              </div>
-              <p class="committee-captain__bio">Tournament organisation, player liaison, and on-course operations.</p>
-            </li>
-            <li class="committee-captain">
-              <div class="committee-captain__head">
-                <span class="committee-captain__avatar" aria-hidden="true">BM</span>
-                <div class="committee-captain__meta">
-                  <span class="committee-captain__name">Bevin Mervis</span>
-                  <span class="committee-captain__role">Captain</span>
-                </div>
-              </div>
-              <p class="committee-captain__bio">Tournament organisation, player liaison, and on-course operations.</p>
-            </li>
-            <li class="committee-captain">
-              <div class="committee-captain__head">
-                <span class="committee-captain__avatar" aria-hidden="true">CQ</span>
-                <div class="committee-captain__meta">
-                  <span class="committee-captain__name">Cesco Quattro</span>
-                  <span class="committee-captain__role">Captain</span>
-                </div>
-              </div>
-              <p class="committee-captain__bio">Tournament organisation, player liaison, and on-course operations.</p>
-            </li>
-            <li class="committee-captain">
-              <div class="committee-captain__head">
-                <span class="committee-captain__avatar" aria-hidden="true">BW</span>
-                <div class="committee-captain__meta">
-                  <span class="committee-captain__name">Bryan Williams</span>
-                  <span class="committee-captain__role">Captain</span>
-                </div>
-              </div>
-              <p class="committee-captain__bio">Tournament organisation, player liaison, and on-course operations.</p>
-            </li>
-          </ul>
+          <article class="committee-premium__card" role="listitem">
+            <div class="committee-premium__avatar" aria-hidden="true">B</div>
+            <h3 class="committee-premium__name">Bevin Mervis</h3>
+            <p class="committee-premium__role">Captain</p>
+          </article>
+          <article class="committee-premium__card" role="listitem">
+            <div class="committee-premium__avatar" aria-hidden="true">C</div>
+            <h3 class="committee-premium__name">Cesco Quattro</h3>
+            <p class="committee-premium__role">Captain</p>
+          </article>
+          <article class="committee-premium__card" role="listitem">
+            <div class="committee-premium__avatar" aria-hidden="true">B</div>
+            <h3 class="committee-premium__name">Bryan Williams</h3>
+            <p class="committee-premium__role">Captain</p>
+          </article>
+          <article class="committee-premium__card" role="listitem">
+            <div class="committee-premium__avatar" aria-hidden="true">J</div>
+            <h3 class="committee-premium__name">Jose Correia</h3>
+            <p class="committee-premium__role">Treasurer</p>
+          </article>
         </div>
       </div>
     </div>
@@ -287,7 +240,10 @@
         <h2 id="pre-footer-membership-heading" class="pre-footer-cta__heading">Ready to join Club32</h2>
       </div>
       <div class="hero-home-media">
-        <img src="images/team.jpg" alt="Club32 members on the course" width="1920" height="815" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/teammobile.jpg" />
+          <img src="images/team.jpg" alt="Club32 members on the course" width="1920" height="815" />
+        </picture>
       </div>
       <div class="pre-footer-cta__action">
         <a href="membership.html" class="pre-footer-cta__link">View membership option</a>

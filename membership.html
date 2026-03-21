@@ -33,52 +33,69 @@
   <section class="hero-home" aria-label="Membership">
     <div class="hero-home-inner">
       <div class="hero-home-media">
-        <img src="images/Join32.jpg" alt="Club32 — Membership" width="1920" height="815" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/join32mobile.jpg" />
+          <img src="images/Join32.jpg" alt="Club32 — Membership" width="1920" height="815" />
+        </picture>
       </div>
     </div>
   </section>
 
   <!-- ── Who Can Join ── -->
-  <section class="section-pad">
+  <section class="section-pad section-eligibility-premium" aria-labelledby="eligibility-heading">
     <div class="container">
-      <div class="section-heading">
-        <span class="section-label">Eligibility</span>
-        <h2>Who Can Join</h2>
-        <p>Club32 is open to professionals across the consumer goods industry value chain.</p>
-        <div class="gold-line"></div>
-      </div>
-      <div class="card-grid-3">
-        <div class="card">
-          <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-cart-shopping"></i></span>
-          <h3>Retail &amp; Wholesale</h3>
-          <p>Professionals operating within retail chains, independent retailers, wholesale distributors, and related trade organisations are warmly welcomed as members of Club32.</p>
-        </div>
-        <div class="card">
-          <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-pills"></i></span>
-          <h3>Pharmacy &amp; Liquor</h3>
-          <p>Representatives from the pharmacy sector and liquor industry — including manufacturers, distributors, and retailers — are eligible to apply for membership.</p>
-        </div>
-        <div class="card">
-          <span class="card-icon" aria-hidden="true"><i class="fa-solid fa-paw"></i></span>
-          <h3>Pet Trade &amp; Services</h3>
-          <p>Pet trade professionals and service providers who support the consumer goods industry — including logistics, marketing, technology, and consulting firms — are also eligible.</p>
-        </div>
-      </div>
-      <div style="text-align:center; margin-top:2.5rem; padding:1.5rem; background:var(--off-white); border-radius:var(--radius-lg); border-left:3px solid var(--accent); max-width:700px; margin-left:auto; margin-right:auto;">
-        <p style="font-size:1rem; color:var(--green); font-weight:500; margin:0;"><strong>Membership is strictly limited to 32 fully paid-up members.</strong> Spaces are extremely limited — we encourage interested professionals to apply early.</p>
+      <header class="eligibility-premium__head">
+        <p class="eligibility-premium__kicker">Eligibility</p>
+        <h2 id="eligibility-heading" class="eligibility-premium__title">Who Can Join</h2>
+      </header>
+
+      <div class="eligibility-premium__grid">
+        <article class="eligibility-premium__panel">
+          <span class="eligibility-premium__index" aria-hidden="true">01</span>
+          <p class="eligibility-premium__label">Sector</p>
+          <div class="eligibility-premium__content">
+            <h3 class="eligibility-premium__name">Retail &amp; Wholesale</h3>
+            <p class="eligibility-premium__text">Professionals operating within retail chains, independent retailers, wholesale distributors, and related trade organisations are warmly welcomed as members of Club32.</p>
+          </div>
+        </article>
+
+        <article class="eligibility-premium__panel">
+          <span class="eligibility-premium__index" aria-hidden="true">02</span>
+          <p class="eligibility-premium__label">Sector</p>
+          <div class="eligibility-premium__content">
+            <h3 class="eligibility-premium__name">Pharmacy &amp; Liquor</h3>
+            <p class="eligibility-premium__text">Representatives from the pharmacy sector and liquor industry — including manufacturers, distributors, and retailers — are eligible to apply for membership.</p>
+          </div>
+        </article>
+
+        <article class="eligibility-premium__panel">
+          <span class="eligibility-premium__index" aria-hidden="true">03</span>
+          <p class="eligibility-premium__label">Sector</p>
+          <div class="eligibility-premium__content">
+            <h3 class="eligibility-premium__name">Pet Trade &amp; Services</h3>
+            <p class="eligibility-premium__text">Pet trade professionals and service providers who support the consumer goods industry — including logistics, marketing, technology, and consulting firms — are also eligible.</p>
+          </div>
+        </article>
+
+        <article class="eligibility-premium__panel eligibility-premium__panel--highlight">
+          <span class="eligibility-premium__index" aria-hidden="true">32</span>
+          <p class="eligibility-premium__label">Limited</p>
+          <div class="eligibility-premium__content">
+            <h3 class="eligibility-premium__name">Exclusive Membership</h3>
+            <p class="eligibility-premium__text">Membership is strictly limited to 32 fully paid-up members. Spaces are extremely limited — we encourage interested professionals to apply early.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ── Membership Options ── -->
-  <section class="section-pad section-offwhite">
-    <div class="container">
-      <div class="section-heading">
-        <span class="section-label">Membership Tiers</span>
-        <h2>Membership Options</h2>
-        <p>Choose the membership type that suits your commitment to the Club32 community.</p>
-        <div class="gold-line"></div>
-      </div>
+  <section class="section-pad section-conduct-charter" aria-labelledby="membership-options-heading">
+    <div class="container conduct-charter">
+      <header class="conduct-charter__header">
+        <p class="conduct-charter__label">Membership Tiers</p>
+        <h2 id="membership-options-heading" class="conduct-charter__title">Membership Options</h2>
+      </header>
       <div class="card-grid-2" style="max-width:840px; margin:0 auto;">
         <div class="membership-card featured">
           <span class="section-label" style="margin-bottom:0.5rem;">Most Popular</span>
@@ -98,8 +115,8 @@
         <div class="membership-card">
           <span class="section-label" style="margin-bottom:0.5rem;">Flexible</span>
           <h3>Reserve / Visitor</h3>
-          <div class="price" style="color:var(--green);">R750</div>
-          <p class="price-note" style="color:var(--text-muted);">per game</p>
+          <div class="price">R750</div>
+          <p class="price-note">per game</p>
           <ul>
             <li>Play on a per-game basis</li>
             <li>Attend select Club32 events</li>
@@ -115,14 +132,12 @@
   </section>
 
   <!-- ── How to Apply ── -->
-  <section class="section-pad">
+  <section class="section-pad section-why-premium" aria-labelledby="apply-heading">
     <div class="container">
-      <div class="section-heading">
-        <span class="section-label">The Process</span>
-        <h2>How to Apply</h2>
-        <p>Joining Club32 is a straightforward process. Here's what to expect.</p>
-        <div class="gold-line"></div>
-      </div>
+      <header class="why-premium__head">
+        <p class="why-premium__kicker">The Process</p>
+        <h2 id="apply-heading" class="why-premium__title">How to Apply</h2>
+      </header>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
@@ -149,14 +164,12 @@
   </section>
 
   <!-- ── Payment Details ── -->
-  <section class="section-pad section-dark">
-    <div class="container">
-      <div class="section-heading">
-        <span class="section-label">Banking Details</span>
-        <h2>Payment Details</h2>
-        <p style="color:rgba(255,255,255,0.65);">All membership fees are payable via EFT to the following account.</p>
-        <div class="gold-line"></div>
-      </div>
+  <section class="section-pad section-conduct-charter" aria-labelledby="payment-heading">
+    <div class="container conduct-charter">
+      <header class="conduct-charter__header">
+        <p class="conduct-charter__label">Banking Details</p>
+        <h2 id="payment-heading" class="conduct-charter__title">Payment Details</h2>
+      </header>
       <div class="payment-box">
         <h3>Club32 Bank Account</h3>
         <div class="payment-row">
@@ -177,28 +190,41 @@
         </div>
         <div class="payment-row">
           <span class="label">Reference</span>
-          <span class="value">Your Full Name + Membership</span>
+          <span class="value">Your Full Name</span>
         </div>
         <div class="payment-row">
           <span class="label">Proof of Payment to</span>
           <span class="value">Jose Correia (Treasurer)</span>
         </div>
       </div>
-      <p style="text-align:center; margin-top:1.5rem; font-size:0.88rem; color:rgba(255,255,255,0.5);">Email your proof of payment to the Treasurer after completing the EFT. <a href="contact.html" style="color:var(--white); text-decoration:underline;">Contact Jose Correia</a></p>
+      <p style="text-align:center; margin-top:1.5rem; font-size:0.88rem; color:rgba(255,255,255,0.5);">Email proof of payment to <a href="contact.html" style="color:var(--white); text-decoration:underline;">Jose Correia</a></p>
     </div>
   </section>
 
   <!-- ── Dress Code ── -->
-  <section class="section-pad-sm section-offwhite">
+  <section class="section-pad section-vision-premium" aria-labelledby="dress-heading">
     <div class="container">
-      <div class="section-heading">
-        <span class="section-label">Dress Standards</span>
-        <h2>Dress Code</h2>
-        <div class="gold-line"></div>
-      </div>
-      <div class="note-box" style="background:white; border-color:rgba(0,0,0,0.2);">
-        <span class="note-icon" aria-hidden="true"><i class="fa-solid fa-shirt"></i></span>
-        <p><strong>Full Members</strong> are required to wear their official Club32 shirt at all organised tournaments. This ensures a professional, unified appearance befitting the club's premium standards. Club shirts are provided as part of your membership. Visitors and reserve players should adhere to smart, appropriate golf attire.</p>
+      <header class="vision-premium__head">
+        <p class="vision-premium__kicker">Dress Standards</p>
+        <h2 id="dress-heading" class="vision-premium__title">Dress Code</h2>
+      </header>
+      <div class="vision-premium__columns">
+        <article class="vision-premium__panel vision-premium__panel--vision">
+          <span class="vision-premium__index" aria-hidden="true">01</span>
+          <p class="vision-premium__label">Full Members</p>
+          <blockquote class="vision-premium__quote">
+            <p class="vision-premium__quote-lead">Official Club32 shirt required at all tournaments.</p>
+            <p>This ensures a professional, unified appearance befitting the club's premium standards. Club shirts are provided as part of your membership.</p>
+          </blockquote>
+        </article>
+        <article class="vision-premium__panel vision-premium__panel--purpose">
+          <span class="vision-premium__index" aria-hidden="true">02</span>
+          <p class="vision-premium__label">Visitors &amp; Reserves</p>
+          <blockquote class="vision-premium__quote">
+            <p class="vision-premium__quote-lead">Smart, appropriate golf attire.</p>
+            <p>Visitors and reserve players should adhere to standard golf dress codes — collared shirts, tailored trousers or shorts, and golf shoes.</p>
+          </blockquote>
+        </article>
       </div>
     </div>
   </section>
@@ -206,14 +232,17 @@
   <section class="pre-footer-cta" aria-labelledby="pre-footer-membership-heading">
     <div class="hero-home-inner">
       <div class="pre-footer-cta__intro">
-        <span class="section-label">Exclusive Membership</span>
+        <span class="section-label">Get in Touch</span>
         <h2 id="pre-footer-membership-heading" class="pre-footer-cta__heading">Ready to join Club32</h2>
       </div>
       <div class="hero-home-media">
-        <img src="images/team.jpg" alt="Club32 members on the course" width="1920" height="815" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/teammobile.jpg" />
+          <img src="images/team.jpg" alt="Club32 members on the course" width="1920" height="815" />
+        </picture>
       </div>
       <div class="pre-footer-cta__action">
-        <a href="membership.html" class="pre-footer-cta__link">View membership option</a>
+        <a href="contact.html" class="pre-footer-cta__link">Contact us to apply</a>
       </div>
     </div>
   </section>
