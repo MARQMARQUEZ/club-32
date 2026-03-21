@@ -2274,6 +2274,10 @@ textarea {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
+  .values-premium__card:last-child {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
