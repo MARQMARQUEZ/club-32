@@ -323,6 +323,12 @@ p { font-size: 1rem; line-height: 1.75; color: var(--text-body); }
   height: auto;
 }
 
+@media (max-width: 768px) {
+  .hero-home-media img {
+    aspect-ratio: 4 / 5;
+  }
+}
+
 /* About: tuck content a touch closer under the hero image */
 .page-about .hero-home {
   padding-bottom: 0.35rem;
