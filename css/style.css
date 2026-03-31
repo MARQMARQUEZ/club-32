@@ -3276,10 +3276,43 @@ textarea {
   border-radius: var(--radius-lg);
 }
 
+.teetimes-banner__btns {
+  position: absolute;
+  right: calc(12% + 18px);
+  top: 68%;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 2;
+}
+
+.teetimes-banner__btn {
+  display: inline-block;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-dark);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 0.6rem 1.75rem;
+  min-width: 8.5rem;
+  text-align: center;
+  border-radius: var(--radius);
+  transition: background 0.25s ease;
+  cursor: pointer;
+}
+
+.teetimes-banner__btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
 .teetimes-banner__link-text {
+  display: none;
   position: absolute;
   left: 1.2rem;
-  bottom: 1.5rem;
+  bottom: 1.25rem;
   font-family: 'Tenor Sans', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
@@ -3301,9 +3334,12 @@ textarea {
     padding-top: 2.25rem;
   }
 
+  .teetimes-banner__btns {
+    display: none;
+  }
+
   .teetimes-banner__link-text {
-    left: 1.2rem;
-    bottom: 1.25rem;
+    display: block;
   }
 }
 
