@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tee Times — Club32</title>
+  <meta name="description" content="View upcoming tee times and event details for Club32's next round." />
+  <meta name="keywords" content="Club32, tee times, upcoming round, golf event" />
+  <meta name="author" content="Club32" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://club32.co.za/teetimes" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://club32.co.za/teetimes" />
+  <meta property="og:title" content="Tee Times — Club32" />
+  <meta property="og:description" content="View upcoming tee times and event details for Club32's next round." />
+  <meta property="og:image" content="https://club32.co.za/images/icon.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:site_name" content="Club32" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://club32.co.za/teetimes" />
+  <meta name="twitter:title" content="Tee Times — Club32" />
+  <meta name="twitter:description" content="View upcoming tee times and event details for Club32's next round." />
+  <meta name="twitter:image" content="https://club32.co.za/images/icon.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="icon" type="image/png" href="images/icon.png" />
+  <link rel="apple-touch-icon" href="images/icon.png" />
+  <link rel="stylesheet" href="css/style.css?v=20260321-footer-redesign" />
+  <link rel="stylesheet" href="css/icons.css?v=20260320-values-icons" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="page-teetimes">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/favicon.svg" alt="Club32" width="36" height="36" />
+        <span class="club-name">Club<span>32</span></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="header-nav" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="teetimes">Tee Times</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="membership.html" class="header-cta">Join Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero-home" aria-label="Upcoming Round">
+    <div class="hero-home-inner">
+      <div class="hero-home-media">
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/teetimespagemobile.jpg" type="image/jpeg" />
+          <img src="images/teetimespage.jpg" alt="Upcoming Round — 17 May" width="1920" height="815" fetchpriority="high" />
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+
+    <!-- Event Details -->
+    <section class="section-pad section-vision-premium teetimes-event" aria-labelledby="event-heading">
+      <div class="container">
+        <header class="vision-premium__head">
+          <p class="vision-premium__kicker">17 May 2026</p>
+          <h2 id="event-heading" class="vision-premium__title">Club 32 Golf Day</h2>
+        </header>
+
+        <div class="vision-premium__columns teetimes-event__columns">
+          <!-- Event Info Panel -->
+          <article class="vision-premium__panel teetimes-panel teetimes-panel--event">
+            <span class="vision-premium__index teetimes-panel__index" aria-hidden="true">17</span>
+            <p class="vision-premium__label teetimes-panel__label">Event Details</p>
+            <div class="teetimes-panel__details">
+              <div class="teetimes-panel__row">
+                <span class="teetimes-panel__row-icon"><i class="fas fa-location-dot"></i></span>
+                <div class="teetimes-panel__row-text">
+                  <span class="teetimes-panel__row-label">Course</span>
+                  <span class="teetimes-panel__row-value">Randpark GC — Firethorn Course</span>
+                </div>
+              </div>
+              <div class="teetimes-panel__row">
+                <span class="teetimes-panel__row-icon"><i class="fas fa-flag"></i></span>
+                <div class="teetimes-panel__row-text">
+                  <span class="teetimes-panel__row-label">Captain on the Day</span>
+                  <span class="teetimes-panel__row-value">Bevin Mervis</span>
+                </div>
+              </div>
+              <div class="teetimes-panel__row">
+                <span class="teetimes-panel__row-icon"><i class="fas fa-users"></i></span>
+                <div class="teetimes-panel__row-text">
+                  <span class="teetimes-panel__row-label">Format</span>
+                  <span class="teetimes-panel__row-value">4 Ball Alliance — 2 to count on all holes</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Find My Tee Time Panel -->
+          <article class="vision-premium__panel teetimes-panel teetimes-panel--search">
+            <span class="vision-premium__index teetimes-panel__index" aria-hidden="true">32</span>
+            <p class="vision-premium__label teetimes-panel__label">Find My Tee Time</p>
+            <div class="teetimes-panel__search-wrap">
+              <input type="text" id="playerSearch" class="teetimes-panel__input" placeholder="Type your name..." autocomplete="off" />
+            </div>
+            <div id="searchResult" class="teetimes-panel__result" style="display:none;">
+              <div class="teetimes-panel__result-player" id="resultPlayer"></div>
+              <div class="teetimes-panel__result-details">
+                <div class="teetimes-panel__result-row">
+                  <span class="teetimes-panel__result-label">Tee</span>
+                  <span class="teetimes-panel__result-value" id="resultTee"></span>
+                </div>
+                <div class="teetimes-panel__result-row">
+                  <span class="teetimes-panel__result-label">Tee Off</span>
+                  <span class="teetimes-panel__result-value" id="resultTime"></span>
+                </div>
+                <div class="teetimes-panel__result-row">
+                  <span class="teetimes-panel__result-label">Playing With</span>
+                  <span class="teetimes-panel__result-value" id="resultPartners"></span>
+                </div>
+              </div>
+            </div>
+            <div id="searchEmpty" class="teetimes-panel__empty">
+              Search by first or last name to find your allocated tee time and playing group.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1st Tee -->
+    <section class="section-pad teetimes-sheet" aria-labelledby="tee1-heading">
+      <div class="container">
+        <header class="teetimes-sheet__head">
+          <span class="teetimes-sheet__tee-label">1st Tee</span>
+          <h3 id="tee1-heading" class="teetimes-sheet__heading">Tee Off Times</h3>
+        </header>
+
+        <div class="teetimes-sheet__grid">
+          <article class="teetimes-card" data-players="Bevin Mervis,Luigi Ferrini,Suren Pather,Cesco Quattro">
+            <span class="teetimes-card__time">07h00</span>
+            <ul class="teetimes-card__players">
+              <li>Bevin Mervis</li>
+              <li>Luigi Ferrini</li>
+              <li>Suren Pather</li>
+              <li>Cesco Quattro</li>
+            </ul>
+          </article>
+
+          <article class="teetimes-card" data-players="Brad Liebenburg,Brian Williams,Edward Griffiths,Vimal Gowan">
+            <span class="teetimes-card__time">07h07</span>
+            <ul class="teetimes-card__players">
+              <li>Brad Liebenburg</li>
+              <li>Brian Williams</li>
+              <li>Edward Griffiths</li>
+              <li>Vimal Gowan</li>
+            </ul>
+          </article>
+
+          <article class="teetimes-card" data-players="Martin Rizzotto,Ronnie Padayachee,Abel Lume,Darren Allaway">
+            <span class="teetimes-card__time">07h14</span>
+            <ul class="teetimes-card__players">
+              <li>Martin Rizzotto</li>
+              <li>Ronnie Padayachee</li>
+              <li>Abel Lume</li>
+              <li>Darren Allaway</li>
+            </ul>
+          </article>
+
+          <article class="teetimes-card" data-players="Fareed Sultan,Wayne Whatley,Rob Suttle,Marcus Carstens">
+            <span class="teetimes-card__time">07h21</span>
+            <ul class="teetimes-card__players">
+              <li>Fareed Sultan</li>
+              <li>Wayne Whatley</li>
+              <li>Rob Suttle</li>
+              <li>Marcus Carstens</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10th Tee -->
+    <section class="section-pad teetimes-sheet teetimes-sheet--alt" aria-labelledby="tee10-heading">
+      <div class="container">
+        <header class="teetimes-sheet__head">
+          <span class="teetimes-sheet__tee-label">10th Tee</span>
+          <h3 id="tee10-heading" class="teetimes-sheet__heading">Tee Off Times</h3>
+        </header>
+
+        <div class="teetimes-sheet__grid">
+          <article class="teetimes-card" data-players="Ben Lubbe,Darren Seaton,Dewet Burger,Gavin Hattingh">
+            <span class="teetimes-card__time">07h00</span>
+            <ul class="teetimes-card__players">
+              <li>Ben Lubbe</li>
+              <li>Darren Seaton</li>
+              <li>Dewet Burger</li>
+              <li>Gavin Hattingh</li>
+            </ul>
+          </article>
+
+          <article class="teetimes-card" data-players="Antony Mathews,Tony Ferreira,Paul O Connel,Joe Liguori">
+            <span class="teetimes-card__time">07h07</span>
+            <ul class="teetimes-card__players">
+              <li>Antony Mathews</li>
+              <li>Tony Ferreira</li>
+              <li>Paul O Connel</li>
+              <li>Joe Liguori</li>
+            </ul>
+          </article>
+
+          <article class="teetimes-card" data-players="Ethan Pretorius,Kevin Pillay,Travis Frank">
+            <span class="teetimes-card__time">07h14</span>
+            <ul class="teetimes-card__players">
+              <li>Ethan Pretorius</li>
+              <li>Kevin Pillay</li>
+              <li>Travis Frank</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before You Arrive -->
+    <section class="section-pad section-vision-premium teetimes-notes" aria-labelledby="notes-heading">
+      <div class="container">
+        <header class="vision-premium__head">
+          <p class="vision-premium__kicker">Before You Arrive</p>
+          <h2 id="notes-heading" class="vision-premium__title">On the Day</h2>
+        </header>
+
+        <div class="teetimes-notes__three-col">
+          <article class="vision-premium__panel vision-premium__panel--vision">
+            <span class="vision-premium__index" aria-hidden="true">17</span>
+            <p class="vision-premium__label">Logistics</p>
+            <blockquote class="vision-premium__quote">
+              <p class="vision-premium__quote-lead">Everything is taken care of — just arrive and play.</p>
+              <p>Golf carts have been arranged for all players. There is no need to book or organise your own transport around the course. Arrive at Randpark GC ready for your tee time and the team will handle the rest.</p>
+            </blockquote>
+          </article>
+
+          <article class="vision-premium__panel vision-premium__panel--purpose">
+            <span class="vision-premium__index" aria-hidden="true">26</span>
+            <p class="vision-premium__label">What to Bring</p>
+            <blockquote class="vision-premium__quote">
+              <p class="vision-premium__quote-lead">Green shirt for play · Blue shirt for lunch · A prize for the day.</p>
+              <p>Please wear your green Club 32 shirt during the round and change into your blue shirt for the lunch and prize-giving afterwards. Each player is asked to bring a prize on the day to add to the pool.</p>
+            </blockquote>
+          </article>
+
+          <article class="vision-premium__panel vision-premium__panel--vision teetimes-notes__location-card">
+            <span class="vision-premium__index" aria-hidden="true">05</span>
+            <p class="vision-premium__label">Course Location</p>
+            <blockquote class="vision-premium__quote">
+              <p class="vision-premium__quote-lead">Randpark Golf Club</p>
+            </blockquote>
+            <div class="teetimes-notes__location-content">
+              <div class="teetimes-notes__location-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.7!2d27.9644993!3d-26.1118712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9575626329dfdb%3A0x3bb01b674a877e7d!2sRandpark%20Firethorn%20Golf%20Course!5e0!3m2!1sen!2sza!4v1711878000000!5m2!1sen!2sza"
+                  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Randpark Golf Club location"></iframe>
+              </div>
+              <a href="https://www.google.com/maps/place/Randpark+Firethorn+Golf+Course/@-26.1118712,27.9644993,15z/data=!4m6!3m5!1s0x1e9575626329dfdb:0x3bb01b674a877e7d!8m2!3d-26.1118712!4d27.9644993!16s%2Fg%2F11fmrf05rd" target="_blank" rel="noopener noreferrer" class="teetimes-notes__location-btn">
+                <i class="fas fa-diamond-turn-right"></i> Get Directions
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-minimal">
+    <div class="footer-minimal__main">
+      <div class="container">
+        <div class="footer-minimal__grid">
+          <div class="footer-minimal__brand">
+            <a href="index.html" class="footer-minimal__logo" aria-label="Club32 home">
+              <img src="images/icon.png" alt="" width="64" height="64" />
+            </a>
+            <p class="footer-minimal__tagline">Premier golf membership for consumer goods professionals.</p>
+          </div>
+          <nav class="footer-minimal__nav" aria-label="Footer navigation">
+            <ul class="footer-minimal__links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="membership.html">Membership</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="footer-minimal__cta">
+            <a href="membership.html" class="footer-minimal__btn">Join Club32</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-minimal__legal">
+      <div class="container">
+        <p class="footer-minimal__copyright">&copy; 2026 Club32 &nbsp;·&nbsp; Copyright &nbsp;·&nbsp; Built by BlockSeven</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var toggle = document.getElementById('navToggle');
+      var links  = document.getElementById('navLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', function() {
+          toggle.classList.toggle('open');
+          links.classList.toggle('open');
+        });
+      }
+
+      // Tee time data
+      var teeData = [
+        { tee: '1st Tee', time: '07h00', players: ['Bevin Mervis', 'Luigi Ferrini', 'Suren Pather', 'Cesco Quattro'] },
+        { tee: '1st Tee', time: '07h07', players: ['Brad Liebenburg', 'Brian Williams', 'Edward Griffiths', 'Vimal Gowan'] },
+        { tee: '1st Tee', time: '07h14', players: ['Martin Rizzotto', 'Ronnie Padayachee', 'Abel Lume', 'Darren Allaway'] },
+        { tee: '1st Tee', time: '07h21', players: ['Fareed Sultan', 'Wayne Whatley', 'Rob Suttle', 'Marcus Carstens'] },
+        { tee: '10th Tee', time: '07h00', players: ['Ben Lubbe', 'Darren Seaton', 'Dewet Burger', 'Gavin Hattingh'] },
+        { tee: '10th Tee', time: '07h07', players: ['Antony Mathews', 'Tony Ferreira', 'Paul O Connel', 'Joe Liguori'] },
+        { tee: '10th Tee', time: '07h14', players: ['Ethan Pretorius', 'Kevin Pillay', 'Travis Frank'] }
+      ];
+
+      var search = document.getElementById('playerSearch');
+      var cards = document.querySelectorAll('.teetimes-card');
+      var resultBox = document.getElementById('searchResult');
+      var emptyBox = document.getElementById('searchEmpty');
+      var resultPlayer = document.getElementById('resultPlayer');
+      var resultTee = document.getElementById('resultTee');
+      var resultTime = document.getElementById('resultTime');
+      var resultPartners = document.getElementById('resultPartners');
+
+      if (search) {
+        search.addEventListener('input', function() {
+          var q = this.value.toLowerCase().trim();
+          var found = null;
+          var foundName = '';
+
+          // Highlight cards
+          cards.forEach(function(card) {
+            var players = card.getAttribute('data-players').toLowerCase();
+            if (q === '') {
+              card.classList.remove('teetimes-card--highlight', 'teetimes-card--dim');
+            } else if (players.indexOf(q) !== -1) {
+              card.classList.add('teetimes-card--highlight');
+              card.classList.remove('teetimes-card--dim');
+            } else {
+              card.classList.add('teetimes-card--dim');
+              card.classList.remove('teetimes-card--highlight');
+            }
+          });
+
+          // Find matching player in data
+          if (q.length >= 2) {
+            for (var i = 0; i < teeData.length; i++) {
+              for (var j = 0; j < teeData[i].players.length; j++) {
+                if (teeData[i].players[j].toLowerCase().indexOf(q) !== -1) {
+                  found = teeData[i];
+                  foundName = teeData[i].players[j];
+                  break;
+                }
+              }
+              if (found) break;
+            }
+          }
+
+          if (found) {
+            var partners = found.players.filter(function(p) { return p !== foundName; });
+            resultPlayer.textContent = foundName;
+            resultTee.textContent = found.tee;
+            resultTime.textContent = found.time;
+            resultPartners.textContent = partners.join(', ');
+            resultBox.style.display = 'block';
+            emptyBox.style.display = 'none';
+          } else {
+            resultBox.style.display = 'none';
+            emptyBox.style.display = q === '' ? 'block' : 'block';
+            if (q !== '' && q.length >= 2) {
+              emptyBox.textContent = 'No player found matching "' + this.value + '"';
+            } else {
+              emptyBox.textContent = 'Search by first or last name to find your allocated tee time and playing group.';
+            }
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
