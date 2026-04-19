@@ -3366,6 +3366,15 @@ textarea {
     padding-top: 2.25rem;
   }
 
+  /* Tighten the gap when two banners stack (e.g. Upcoming Round + Weekend Away on home) */
+  .teetimes-banner + .teetimes-banner {
+    padding-top: 0.5rem;
+  }
+
+  .teetimes-banner:has(+ .teetimes-banner) {
+    padding-bottom: 0.5rem;
+  }
+
   .teetimes-banner__btns {
     display: none;
   }
