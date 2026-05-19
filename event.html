@@ -36,6 +36,28 @@
   <link rel="stylesheet" href="css/style.css?v=20260419-banner-stack-tight" />
   <link rel="stylesheet" href="css/icons.css?v=20260320-values-icons" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    .form-group.has-error input,
+    .form-group.has-error select,
+    .form-group.has-error textarea {
+      border-color: #d64545 !important;
+      box-shadow: 0 0 0 1px #d64545;
+    }
+    .form-group.has-error .reg__pkg-card {
+      outline: 1px solid #d64545;
+      outline-offset: 2px;
+    }
+    .form-group .form-error {
+      color: #d64545;
+      font-size: 0.85rem;
+      margin: 0.5rem 0 0;
+      font-weight: 500;
+      display: block;
+    }
+    .form-group.form-group--checkbox.has-error .form-checkbox span {
+      color: #d64545;
+    }
+  </style>
 </head>
 <body class="page-event">
 
@@ -281,11 +303,12 @@
         <div class="event-register__single page-contact__forms-integrated">
           <div class="form-panel">
             <div class="form-panel__body">
-              <form id="event-registration-form" action="https://formsubmit.co/ajax/Tristan@blockseven.info" method="POST" novalidate>
-                <input type="hidden" name="_cc" value="Antony.Mathews@tigerbrands.com" />
-                <input type="hidden" name="_subject" value="New Event Registration — Club 32 Weekend Away (24-27 Sept 2026)" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
+              <form id="event-registration-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                <input type="hidden" name="access_key" value="14466187-3f21-445e-8fe7-ef203d934c92" />
+                <input type="hidden" name="subject" value="New Event Registration — Club 32 Weekend Away (24-27 Sept 2026)" />
+                <input type="hidden" name="from_name" value="Club 32 Event Registration" />
+                <input type="hidden" name="cc" value="Antony.Mathews@tigerbrands.com" />
+                <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true" />
                 <input type="hidden" name="form_type" value="event_registration" />
                 <input type="hidden" name="event_name" value="Club 32 Annual Event 2026" />
                 <input type="hidden" name="event_dates" value="24-27 September 2026" />
@@ -308,7 +331,7 @@
                   </div>
                   <div class="form-group">
                     <label for="ev-company">Company / organisation</label>
-                    <input type="text" id="ev-company" name="company" placeholder="Company name" autocomplete="organization" />
+                    <input type="text" id="ev-company" name="company" placeholder="Company name" autocomplete="organization" required />
                   </div>
                 </div>
 
@@ -521,8 +544,83 @@
 
       var form = document.getElementById('event-registration-form');
       if (form) {
+        var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        function clearErrors() {
+          form.querySelectorAll('.form-error').forEach(function(el) { el.remove(); });
+          form.querySelectorAll('.has-error').forEach(function(el) { el.classList.remove('has-error'); });
+        }
+
+        function showError(groupEl, message) {
+          groupEl.classList.add('has-error');
+          var msg = document.createElement('p');
+          msg.className = 'form-error';
+          msg.setAttribute('role', 'alert');
+          msg.textContent = message;
+          groupEl.appendChild(msg);
+        }
+
+        function groupOf(fieldEl) {
+          return fieldEl.closest('.form-group') || fieldEl.parentElement;
+        }
+
+        function validate() {
+          clearErrors();
+          var firstInvalid = null;
+
+          function fail(fieldOrGroup, message, isGroup) {
+            var group = isGroup ? fieldOrGroup : groupOf(fieldOrGroup);
+            showError(group, message);
+            if (!firstInvalid) firstInvalid = { field: isGroup ? null : fieldOrGroup, group: group };
+          }
+
+          var name = form.querySelector('[name="full_name"]');
+          if (!name.value.trim()) fail(name, 'Please enter your full name.');
+
+          var email = form.querySelector('[name="email"]');
+          var emailVal = email.value.trim();
+          if (!emailVal) fail(email, 'Please enter your email address.');
+          else if (!EMAIL_RE.test(emailVal)) fail(email, 'Please enter a valid email address.');
+
+          var phone = form.querySelector('[name="phone"]');
+          if (!phone.value.trim()) fail(phone, 'Please enter your mobile number.');
+
+          var company = form.querySelector('[name="company"]');
+          if (!company.value.trim()) fail(company, 'Please enter your company or organisation.');
+
+          if (!form.querySelector('[name="package"]:checked')) {
+            var pkgGroup = form.querySelector('.reg__packages').closest('.form-group');
+            fail(pkgGroup, 'Please choose a package.', true);
+          }
+
+          var consent = form.querySelector('[name="consent"]');
+          if (!consent.checked) fail(consent, 'Please confirm consent to be contacted.');
+
+          if (firstInvalid) {
+            firstInvalid.group.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (firstInvalid.field) {
+              try { firstInvalid.field.focus({ preventScroll: true }); } catch (e) { firstInvalid.field.focus(); }
+            }
+            return false;
+          }
+          return true;
+        }
+
+        function clearFieldError(target) {
+          var group = target.closest('.has-error');
+          if (group) {
+            group.classList.remove('has-error');
+            var err = group.querySelector('.form-error');
+            if (err) err.remove();
+          }
+        }
+        form.addEventListener('input', function(e) { clearFieldError(e.target); });
+        form.addEventListener('change', function(e) { clearFieldError(e.target); });
+
         form.addEventListener('submit', function(e) {
           e.preventDefault();
+          if (!validate()) return;
+
           var btn = form.querySelector('button[type="submit"]');
           var originalText = btn ? btn.textContent : '';
 
@@ -539,10 +637,12 @@
             headers: { 'Accept': 'application/json' }
           })
           .then(function(response) {
-            if (!response.ok) {
-              throw new Error('HTTP ' + response.status);
-            }
-            return response.json();
+            return response.json().then(function(data) {
+              if (!response.ok || !data || data.success !== true) {
+                throw new Error((data && data.message) || ('HTTP ' + response.status));
+              }
+              return data;
+            });
           })
           .then(function() {
             if (btn) btn.textContent = 'Thank you — we will be in touch';
@@ -552,12 +652,12 @@
             console.error('Form submit failed:', err);
             if (btn) {
               btn.disabled = false;
-              btn.textContent = 'Try again — submission failed';
+              btn.textContent = 'Submission failed — please email us';
               setTimeout(function() {
-                if (btn.textContent === 'Try again — submission failed') {
+                if (btn.textContent === 'Submission failed — please email us') {
                   btn.textContent = originalText || 'Submit registration';
                 }
-              }, 4000);
+              }, 5000);
             }
           });
         });
