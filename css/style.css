@@ -3679,10 +3679,9 @@ textarea {
 }
 
 .teetimes-sheet--alt .teetimes-sheet__grid {
-  grid-template-columns: repeat(3, 16rem);
-  width: fit-content;
-  max-width: 100%;
-  margin-inline: auto;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 68rem;
+  margin: 0 auto;
 }
 
 /* Individual card */
