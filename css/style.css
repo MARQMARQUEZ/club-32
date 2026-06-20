@@ -3306,7 +3306,7 @@ textarea {
 .teetimes-banner__btns {
   position: absolute;
   right: calc(12% + 18px);
-  top: 68%;
+  top: 74%;
   display: flex;
   gap: 0.75rem;
   z-index: 2;
