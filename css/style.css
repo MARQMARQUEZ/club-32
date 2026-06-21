@@ -3679,9 +3679,10 @@ textarea {
 }
 
 .teetimes-sheet--alt .teetimes-sheet__grid {
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 68rem;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 16rem);
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
 }
 
 /* Individual card */
@@ -3889,6 +3890,11 @@ textarea {
   .teetimes-sheet__grid,
   .teetimes-sheet--alt .teetimes-sheet__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reset the desktop fit-content centering so the alt grid fills width like the 1st Tee on mobile */
+  .teetimes-sheet--alt .teetimes-sheet__grid {
+    width: auto;
   }
 }
 
